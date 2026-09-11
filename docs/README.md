@@ -7,16 +7,16 @@
 ## Alunos
 | Matrícula | Aluno | Subgrupo |
 | -- | -- | -- |
-| 2410125891 | [Ana Beatriz Souza Araujo](https://github.com/AnnaBeatrizAraujo) | Subgrupo 2 |
-| 241010923 | [Artur Fernandes Galdino](https://github.com/ArturFGaldino) | Subgrupo 1 |
-| 241012202 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Subgrupo 3 |
-| 241011081 | [Gabriel Mota Oliveira](https://github.com/Gabro-MO) | Subgrupo 3 |
+| 241025891 | [Ana Beatriz Souza Araujo](https://github.com/AnnaBeatrizAraujo)  | Subgrupo 2 |
+| 241010923 | [Artur Fernandes Galdino](https://github.com/ArturFGaldino)       | Subgrupo 1 |
+| 241012202 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino)      | Subgrupo 3 |
+| 241011081 | [Gabriel Mota Oliveira](https://github.com/Gabro-MO)              | Subgrupo 3 |
 | 241032500 | [Giovani de Oliveira Teodoro Coelho](https://github.com/Gotc2607) | Subgrupo 1 |
-| 241032519 | [Gustavo Gomes Fornaciari](https://github.com/GUGOFO) | Subgrupo 2 |
-| 241012347 | [Nicole Jovita Fernandes](https://github.com/nicolejovita) | Subgrupo 1 |
-| 241040860 | [Yasmim de Souza Santos](https://github.com/eii-yahs) | Subgrupo 3|
-| 241025274 | [João Eduardo de Souza Leles](https://github.com/joaoleless) | Subgrupo 1 |
-| 222021826 | [Victor Leandro Rocha de Assis](https://github.com/Afrontoso) | Subgrupo 2 |
+| 241032519 | [Gustavo Gomes Fornaciari](https://github.com/GUGOFO)             | Subgrupo 2 |
+| 241025274 | [João Eduardo de Souza Leles](https://github.com/joaoleless)      | Subgrupo 1 |
+| 241012347 | [Nicole Jovita Fernandes](https://github.com/nicolejovita)        | Subgrupo 1 |
+| 222021826 | [Victor Leandro Rocha de Assis](https://github.com/Afrontoso)     | Subgrupo 2 |
+| 241040860 | [Yasmim de Souza Santos](https://github.com/eii-yahs)             | Subgrupo 3 |
 
 ## Sobre 
 
@@ -49,4 +49,4 @@ O projeto foi orientado ao site [**Meu SUS Digital**](https://meususdigital.saud
 
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 11/09/2026 | [](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualização do Home | 11/09/2026 | [ adba770 ](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/adba770257674505c3c263ad0abf8c1101bf77f5) | 
