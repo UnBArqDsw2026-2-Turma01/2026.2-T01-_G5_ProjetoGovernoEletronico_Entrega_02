@@ -21,7 +21,7 @@ Esta issue destina-se ao desenvolvimento e evolução da **Versão Y** da modela
 
 ---
 
-## 👥 Responsáveis
+## Responsáveis
 
 | Frente | Responsável |
 | :--- | :--- |
