@@ -1,8 +1,12 @@
 # Modelagem Estatica 
 
+---
+
+## Versão Final
+
 ![Versao final da Modelagem Estatica](../caminho/para/imagem.png)
 
-**Legenda:** Legenda para imagem
+<center><strong>Legenda:</strong> Legenda para imagem</center>
 
 ---
 
@@ -15,9 +19,45 @@
 
 ---
 
-## Continuação do documento
+## Fundamentação Teorica
 
-Lorem Lorem Lorem Lorem Lorem Lorem
+Exlpique bravemente como funciona o UML que voce escolheu
+
+---
+
+## Desenvolvimento
+
+### Versão 1
+
+![Imagem Versao 1](../caminho/para/imagem.png)
+
+<center><strong>Legenda:</strong> Legenda para imagem</center>
+
+Explique porque voce fez, oque voce fez, etc etc
+
+### Versão 2
+
+![Imagem Versao 2](../caminho/para/imagem.png)
+
+<center><strong>Legenda:</strong> Legenda para imagem</center>
+
+Oque voce modificou e porque modificou
+
+### Versão 3
+
+![Imagem Versao 3](../caminho/para/imagem.png)
+
+<center><strong>Legenda:</strong> Legenda para imagem</center>
+
+Oque voce modificou e porque modificou
+
+---
+
+## Metodologia
+
+Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , caso tenha alguma particularidade, explicar ela
+
+"Seguindo a geral e --extra da subequipe--..."
 
 ---
 
