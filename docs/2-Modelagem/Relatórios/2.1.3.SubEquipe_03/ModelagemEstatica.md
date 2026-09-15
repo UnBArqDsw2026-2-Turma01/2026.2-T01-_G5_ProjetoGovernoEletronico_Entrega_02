@@ -29,6 +29,8 @@
 
 <center><strong>Legenda:</strong> Diagrama de Classes (Versão 1) do domínio "Meu SUS Digital", elaborado por Davi Ursulino de Oliveira.</center>
 
+<center><strong>Link Editável:</strong> [Abrir e editar no draw.io](https://app.diagrams.net/?url=https://raw.githubusercontent.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/docs/subequipe03-uml-estatica-v1/docs/2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ClasseV1_MeuSUS.drawio)</center>
+
 **Tipo de UML escolhido: Diagrama de Classes** — decisão do subgrupo por ser o diagrama estático mais adequado pra representar as entidades do domínio já mapeadas na Entrega 1 (Rich Picture e BPMN dos fluxos "Rede de Saúde" e "Conteúdo").
 
 Nesta primeira versão, modelei as entidades centrais do "Meu SUS Digital" e seus relacionamentos, aplicando as diferentes semânticas de relacionamento da UML (não usando "associação" genérica pra tudo):
