@@ -10,9 +10,19 @@
         - [Guia Rich Picture](/Projeto/ExtrasEntrega1/GuiaRichPicture.md)
         - [Guia SIG | NFR Framework](/Projeto/ExtrasEntrega1/GuiaNFR.md)
     - [Entrega 2](./Projeto/ExtrasEntrega2/README.md)
+        - [Guias de Diagramas Estáticos](./Projeto/ExtrasEntrega2/README.md)
+            - [Diagrama de Classes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaClasses.md)
+            - [Diagrama de Componentes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaComponentes.md)
+            - [Diagrama de Pacotes](./Projeto/ExtrasEntrega2/GuiasDiagramasEstaticos/DiagramaPacotes.md)
+        - [Guias de Diagramas Dinâmicos](./Projeto/ExtrasEntrega2/README.md)
+            - [Diagrama de Atividades](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaAtividades.md)
+            - [Diagrama de Colaboração](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaColaboracao.md)
+            - [Diagrama de Estados](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaEstados.md)
+            - [Diagrama de Sequência](./Projeto/ExtrasEntrega2/GuiasDiagramasDinamicos/DiagramaSequencia.md)
+
 
 - **Atas**
-    - Entrega 1:
+    - Entrega 1
         - [Atas Grupo](./Atas/Entrega1/AtasGerais/README.md)
             - [Ata - 20 de agosto](./Atas/Entrega1/AtasGerais/Ata-20-08.md)
             - [Ata - 24 de agosto](./Atas/Entrega1/AtasGerais/Ata-24-08.md)
@@ -23,7 +33,7 @@
             - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub2/Ata-25-08.md)
         - [Atas SubEquipe 3](./Atas/Entrega1/AtasSub3/README.md)
             - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub3/Ata-25-08.md)
-    - Entrega 2:
+    - Entrega 2
         - [Atas Grupo](./Atas/Entrega2/AtasGerais/README.md)
             - [Ata - XX de YYYY](./Atas/Entrega2/AtasGerais/algo.md)
         - [Atas SubEquipe 1](./Atas/Entrega2/AtasSub1/README.md)
@@ -35,7 +45,7 @@
     - [Modelo de Ata](./Atas/Atas-Modelo.md)
 
 - **1. Desenho de Software (Base)**
-  - 1.1 Relatórios
+  - 1.1 Relatório
       - 1.1.1. SubEquipe_01
         - [Artefatos Generalistas](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.1.Artefatos%20Generalistas.md)
         - [SIG | NFR](./1-DesenhoDeSoftware/Relatórios/1.1.1.SubEquipe_01/1.1.1.2.NFR.md)
@@ -55,18 +65,18 @@
   - [1.3. Iniciativas Extras](./1-DesenhoDeSoftware/1.3.IniciativasExtras.md)
 
 - **2. Modelagem**
-    - 2.1 Relatorio
+    - 2.1 Relatório
         - 2.1.1. SubEquipe_01 
-            - [Modelagem Estatica](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md)
-            - [Modelagem Dinamica](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/IA.md)
         - 2.1.2. SubEquipe_02
-            - [Modelagem Estatica](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemEstatica.md)
-            - [Modelagem Dinamica](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemDinamica.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/IA.md)
         - 2.1.3. SubEquipe_03
-            - [Modelagem Estatica](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemEstatica.md)
-            - [Modelagem Dinamica](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemDinamica.md)
+            - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemEstatica.md)
+            - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/IA.md)
     - [2.2 Participações](./2-Modelagem/2.2.ParticipacoesModelagem.md)
     - [2.3 Iniciativas Extras](./2-Modelagem/2.3.IniciativasExtras.md)
