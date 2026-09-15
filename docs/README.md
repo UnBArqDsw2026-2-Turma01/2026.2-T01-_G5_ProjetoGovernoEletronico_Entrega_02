@@ -1,4 +1,4 @@
-# G6_ProjetoGovernoEletronico
+# G5_ProjetoGovernoEletronico
 
 **Código da Disciplina**: FGA0208<br>
 **Número do Grupo**: 05<br>
