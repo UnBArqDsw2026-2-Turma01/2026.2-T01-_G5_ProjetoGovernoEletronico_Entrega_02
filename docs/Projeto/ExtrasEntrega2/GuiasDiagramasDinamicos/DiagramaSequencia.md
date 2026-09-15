@@ -26,7 +26,7 @@ Segundo o material de *Modelagem UML Dinâmica* da Profa. Milene Serrano, o **Di
 
 ## Ferramentas de Modelagem Recomendadas
 
-Com base nas ferramentas de modelagem sugeridas para o projeto (**Draw.io**, **Mermaid** e **PlantUML**), detalham-se as recomendações e o passo a passo de uso para a equipe:
+Com base nas ferramentas de modelagem sugeridas para o projeto (**Draw.io**, **Mermaid** e **PlantUML**), detalham-se as recomendações para a equipe:
 
 ### 1. PlantUML (*Diagrams-as-Code*)
 
@@ -62,4 +62,5 @@ Ferramenta gráfica recomendada para rascunhos, diagramação colaborativa rápi
 
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
+| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | |
 | [Nicole Jovita](https://github.com/nicolejovita) | Criação do Guia do Diagrama de Sequência | 14/09/2026 | |
