@@ -91,9 +91,31 @@ Para orientar a interpretação do diagrama, a modelagem foi sustentada pelas se
 
 ![Imagem Versão 2](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v2.0.jpg) 
 
-<center><strong>Legenda:</strong> Inserir legenda </center>
+**Legenda:** Enquadramento formal do diagrama (Diagram Frame) e padronização de instâncias UML
 
-Explicar o que foi feito.
+O que mudou desde a Versão 1.0: o diagrama agora está contido numa moldura UML com cabeçalho identificando o tipo (`communication`) e o elemento proprietário (`MeuSUSDigital::AutenticacaoEConsentimento`); o ator `:Cidadão` foi substituído pelo ícone de boneco (stick figure); e todas as instâncias passaram a seguir a convenção `nomeDaInstancia: NomeDaClasse` (ex.: `c: Cidadão`, `app: AppMeuSUS`, `gov: GovBrProvider`). Também reorganizei o layout em torno dos dois hubs centrais (`app` e `auth`) para reduzir cruzamentos de linhas e afastar rótulos das bordas do diagrama, sem alterar a lógica de nenhuma mensagem da jornada de autenticação federada (Gov.br), consentimento (LGPD) e consumo de dados clínicos (HL7 FHIR / RNDS).
+
+## Convenções Visuais e Legenda do Modelo
+
+- **Moldura do Diagrama (Diagram Frame):** retângulo que delimita o escopo do caso de uso, com o pentágono de cabeçalho no canto superior esquerdo trazendo o tipo do diagrama (`communication`) e o nome do elemento proprietário.
+- **Ator Principal (Actor Lifeline):** representado pelo ícone de boneco (*stick figure*), sinalizando visualmente o ator humano que dispara a jornada.
+- **Objetos / Instâncias (`instancia: Classe`):** representam os componentes e instâncias operacionais do ecossistema, nomeados explicitamente (nome da instância + nome da classe).
+- **Enlaces de Comunicação (linhas contínuas):** explicitam os caminhos de comunicação diretamente estabelecidos entre dois objetos.
+- **Setas de Disparo:** apontam o sentido da chamada de método entre os objetos.
+- **Sequência Numérica Aninhada (`1`, `1.1`, `2.2.1`):** define a ordem cronológica exata de execução; a numeração decimal ramificada mapeia a hierarquia de métodos chamados durante o tempo de ativação de uma operação superior.
+- **Expressões de Guarda (`[condição]`):** condicionantes de negócio aplicadas ao envio das mensagens.
+
+## Mapeamento de Objetos e Responsabilidades
+
+| Objeto / Papel | Tipo / Camada | Responsabilidade no Fluxo |
+|---|---|---|
+| `c: Cidadão` | Ator Externo | Cidadão que interage com a interface do aplicativo. |
+| `app: AppMeuSUS` | Frontend / Cliente | Cliente móvel que coordena a navegação e a renderização da interface. |
+| `auth: AuthService` | Controller / Segurança | Controlador responsável pela geração do desafio PKCE e validação dos tokens JWT (RS256/JWKS). |
+| `gov: GovBrProvider` | Serviço Externo | Provedor federado de identidade responsável pela autenticação e emissão do *Auth Code*. |
+| `consent: ConsentManager` | Serviço / Negócio | Gerenciador que valida e coleta o aceite explícito dos Termos de Uso e Política de Privacidade (LGPD). |
+| `audit: AuditLogger` | Repositório / Segurança | Serviço de auditoria que registra logs imutáveis acompanhados de Hash SHA-256. |
+| `storage: SecureStorage` | Armazenamento Local | Cofre criptografado local (*KeyStore/Keychain*) para persistência dos tokens de acesso. |
 
 ---
 
