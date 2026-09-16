@@ -1,4 +1,4 @@
-# Modelagem Estática 
+# Modelagem Estática | Diagrama de Pacotes
 
 ---
 
@@ -30,6 +30,8 @@
 
 ## Fundamentação Teórica
 
+### O que é o Diagrama de Pacotes 
+
 O **Diagrama de Pacotes** é um diagrama estrutural e estático da UML (Unified Modeling Language) cujo principal objetivo é organizar o sistema em subsistemas, módulos ou camadas lógicas de alto nível. Ele permite agrupar elementos de modelagem — como classes, interfaces, componentes e outros pacotes — em contêineres gerenciáveis representados graficamente como pastas de arquivos. 
 
 Essa notação reduz a complexidade visual de projetos complexos, facilitando a visualização de dependências, acoplamentos e separação de responsabilidades (como a divisão entre camadas de apresentação, lógica de negócios, segurança e persistência), mantendo a arquitetura modular e escalável.
@@ -38,7 +40,7 @@ Essa notação reduz a complexidade visual de projetos complexos, facilitando a 
 
 ## Desenvolvimento
 
-### Versão 1
+### Versão 1.0
 
 **Autoria:** [Artur Galdino](https://github.com/ArturFGaldino)
 ![Imagem Versao 1](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.0.jpg)
@@ -55,40 +57,38 @@ O sistema foi estruturado em quatro grandes pacotes e seus respectivos subpacote
 
 As dependências entre os pacotes foram estabelecidas por meio de setas pontilhadas com o estereótipo `<<use>>`, refletindo diretamente o sentido de consumo de serviços: a camada de apresentação consome o módulo de autenticação, enquanto os módulos funcionais dependem das diretrizes de segurança, auditoria e conformidade legal providas pelo pacote de segurança.
 
-### Versão 2
+### Versão 1.1
 
 **Autoria:** [Giovani Coelho](https://github.com/Gotc2607)
 ![Imagem Versao 2](../caminho/para/imagem.png)
 
 <center><strong>Legenda:</strong> Legenda para imagem</center>
 
-Oque voce modificou e porque modificou
+O que voce modificou e por que modificou
 
-### Versão 3
+### Versão 1.2
 
 **Autoria:** [João Leles](https://github.com/joaoleless)
 ![Imagem Versao 3](../caminho/para/imagem.png)
 
 <center><strong>Legenda:</strong> Legenda para imagem</center>
 
-Oque voce modificou e porque modificou
+O que voce modificou e por que modificou
 
-### Versão 4
+### Versão 1.3
 
 **Autoria:** [Nicole Jovita](https://github.com/nicolejovita)
 ![Imagem Versao 4](../caminho/para/imagem.png)
 
 <center><strong>Legenda:</strong> Legenda para imagem</center>
 
-Oque voce modificou e porque modificou
+O que voce modificou e por que modificou
 
 ---
 
 ## Metodologia
 
-A equipe seguiu uma abordagem colaborativa e incremental para a construção do artefato, alinhando as decisões arquiteturais diretamente aos modelos produzidos nas entregas anteriores (especialmente o mapeamento de segurança do BPMN e os Requisitos Não Funcionais do NFR Framework). 
-
-Seguindo a diretriz geral da disciplina e as especificidades da nossa subequipe, o processo consistiu na extração dos principais domínios lógicos identificados na engenharia reversa do aplicativo *Meu SUS Digital*, convertendo fluxos comportamentais e restrições de cibersegurança em pacotes modulares de alto acoplamento interno e baixo acoplamento externo.
+INSERIR METODOLOGIA. 
 
 ---
 
