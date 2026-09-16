@@ -35,7 +35,7 @@
             - [Ata - 25 de agosto](./Atas/Entrega1/AtasSub3/Ata-25-08.md)
     - Entrega 2
         - [Atas Grupo](./Atas/Entrega2/AtasGerais/README.md)
-            - [Ata - 14 de Setembro](./Atas/Entrega2/AtasGerais/algo.md)
+            - [Ata - 14 de Setembro](./Atas/Entrega2/AtasGerais/Ata-14-09.md)
         - [Atas SubEquipe 1](./Atas/Entrega2/AtasSub1/README.md)
             - [Ata - XX de YYYY](./Atas/Entrega2/AtasSub1/algo.md)
         - [Atas SubEquipe 2](./Atas/Entrega2/AtasSub2/README.md)
