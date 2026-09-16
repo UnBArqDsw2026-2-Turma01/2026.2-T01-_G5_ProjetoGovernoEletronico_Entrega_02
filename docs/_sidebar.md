@@ -39,7 +39,7 @@
         - [Atas SubEquipe 1](./Atas/Entrega2/AtasSub1/README.md)
             - [Ata - XX de YYYY](./Atas/Entrega2/AtasSub1/algo.md)
         - [Atas SubEquipe 2](./Atas/Entrega2/AtasSub2/README.md)
-            - [Ata - XX de YYYY](./Atas/Entrega2/AtasSub2/Ata-15-09.md)
+            - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub2/Ata-15-09.md)
         - [Atas SubEquipe 3](./Atas/Entrega2/AtasSub3/README.md)
             - [Ata - XX de YYYY](./Atas/Entrega2/AtasSub3/algo.md)
     - [Modelo de Ata](./Atas/Atas-Modelo.md)
