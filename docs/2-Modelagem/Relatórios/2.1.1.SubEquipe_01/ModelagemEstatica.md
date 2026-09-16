@@ -60,11 +60,24 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 ### Versão 1.1
 
 **Autoria:** [Giovani Coelho](https://github.com/Gotc2607)
-![Imagem Versao 2](../caminho/para/imagem.png)
+![Imagem Versao 1.1](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.1.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Evolução do Diagrama de Pacotes com adição das camadas de Domínio (HealthServices) e Persistência de Dados.</center>
 
-O que voce modificou e por que modificou
+**O Que Foi Modificado na Estrutura**
+* **Refinamento do pacote Presentation:** Adicionamos o subpacote StateManagement atuando como intermediário obrigatório dentro da camada de apresentação.
+* **Criação do pacote HealthServices (Domínio):** Inserimos este novo pacote central para abrigar as regras de negócio, contendo os submódulos Appointments, Vaccination e MedicalRecords.
+* **Criação do pacote DataPersistence:** Adicionamos este pacote voltado ao armazenamento local de dados, contendo os submódulos CacheManager e LocalDatabase.
+* **Atualização do Fluxo de Dependências:** Redirecionamos as setas para que o Presentation consuma apenas o HealthServices, e este passe a orquestrar as chamadas para o HealthIntegration e para o DataPersistence.
+* **Ajuste nas notações UML:** Padronizamos todas as conexões (tanto internas quanto entre os grandes pacotes) utilizando rigorosamente setas tracejadas com o estereótipo `<<use>>`.
+* **Exclusão consciente de escopo:** Optamos por não incluir o NotificationService nesta iteração específica, mantendo o diagrama focado exclusivamente na resolução do fluxo principal de dados e estado offline.
+
+**Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)**
+* **Isolamento de Responsabilidades na UI:** A introdução do StateManagement garante que as telas (Screens) sejam componentes puramente visuais, transferindo toda a responsabilidade de acionar casos de uso e controlar a navegação para um gerenciador de estado dedicado.
+* **Adoção de Arquitetura Centrada no Domínio:** A criação do HealthServices coloca as regras de negócio do aplicativo governamental no centro do sistema, evitando que a lógica principal fique espalhada pelas telas ou misturada com a infraestrutura de rede.
+* **Atendimento a Requisitos Não Funcionais (Disponibilidade Offline):** O pacote DataPersistence foi adicionado para suprir a necessidade crítica de um aplicativo de saúde pública: garantir que o cidadão possa acessar sua carteira de vacinação e agendamentos mesmo sem conexão à internet.
+* **Aumento da Testabilidade:** Com as regras de negócio isoladas no domínio e as ações de tela encapsuladas no gerenciador de estado, torna-se viável escrever testes unitários sem depender da renderização de interfaces gráficas ou de conexões reais com o servidor FHIR.
+* **Rigor Técnico e Padronização:** O ajuste visual para as setas tracejadas garante que o artefato esteja em total conformidade com a notação oficial da UML, demonstrando maturidade na engenharia de software e evitando ambiguidades de interpretação.
 
 ### Versão 1.2
 
@@ -107,3 +120,4 @@ INSERIR METODOLOGIA.
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Artur Galdino](https://github.com/ArturFGaldino) | Estruturação inicial do artefato de modelagem estática de pacotes e definição dos módulos | 15/09/2026 | [74546bc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/74546bc3f8c51bdd738df156dbc65de0edcfceac) |
+| [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.1 da modelagem estática de pacotes (adição de Domínio e Persistência) | 16/09/2026 | [6cf3912](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf3912) |
