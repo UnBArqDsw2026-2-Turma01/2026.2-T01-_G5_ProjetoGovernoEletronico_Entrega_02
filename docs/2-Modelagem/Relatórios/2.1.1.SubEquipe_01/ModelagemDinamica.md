@@ -89,7 +89,7 @@ Para orientar a interpretação do diagrama, a modelagem foi sustentada pelas se
 
 **Autoria:** [João Leles](https://github.com/joaoleless)
 
-![Imagem Versão 2](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v2.0.jpg) 
+![Imagem Versão 2](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v2.0.png) 
 
 **Legenda:** Enquadramento formal do diagrama (Diagram Frame) e padronização de instâncias UML
 
