@@ -7,13 +7,13 @@ Este documento apresenta uma introdução ao **Diagrama de Pacotes** e orientaç
 
 ## Introdução ao Diagrama de Pacotes
 
-O **Diagrama de Pacotes** é um diagrama **estrutural e estático** da UML que, como descrito no material da disciplina, "permite organizar o sistema como se representasse uma visão em módulos". Ele não mostra como o sistema se comporta nem detalha atributos e operações: seu papel é responder a uma pergunta anterior a essas — **como o sistema está dividido, e quem depende de quem**.
+O **Diagrama de Pacotes** é um diagrama **estrutural e estático** da UML que, como descrito no material da disciplina, "permite organizar o sistema como se representasse uma visão em módulos". Ele não mostra como o sistema se comporta nem detalha atributos e operações: seu papel é responder a uma pergunta anterior a essas **como o sistema está dividido, e quem depende de quem**.
 
 Na classificação apresentada em aula, a UML reúne diagramas estruturais (ou estáticos), comportamentais (ou dinâmicos), **organizacionais (ou em pacotes)** e anotacionais. O Diagrama de Pacotes é o representante da fatia organizacional, e tem origem no OOSE, de Ivar Jacobson, uma das três notações fundidas na criação da UML.
 
-Um **pacote** é um agrupador de propósito geral: ele pode conter classes, interfaces, componentes, casos de uso e **outros pacotes**. Essa capacidade de aninhamento é o que torna o diagrama útil em sistemas grandes — permite olhar a arquitetura em vários níveis de zoom, do sistema inteiro até um módulo específico, sem mudar de notação.
+Um **pacote** é um agrupador de propósito geral: ele pode conter classes, interfaces, componentes, casos de uso e **outros pacotes**. Essa capacidade de aninhamento é o que torna o diagrama útil em sistemas grandes permite olhar a arquitetura em vários níveis de zoom, do sistema inteiro até um módulo específico, sem mudar de notação.
 
-### Quando usar (e quando não usar)
+### Quando usar e quando não usar
 
 | Use quando… | Prefira outro diagrama quando… |
 | :--- | :--- |
@@ -26,11 +26,23 @@ Um **pacote** é um agrupador de propósito geral: ele pode conter classes, inte
 
 - **Pacote (*Package*):** representado por um retângulo com uma aba no canto superior esquerdo, no formato de uma pasta de arquivos. Quando o pacote está **vazio ou colapsado**, o nome vai no corpo do retângulo; quando ele **mostra seu conteúdo**, o nome sobe para a aba e o corpo é usado para desenhar os elementos internos.
 
+![As duas formas de desenhar um pacote: colapsado e expandido](assets/GuiaDiagramaPacotes/pacote-notacao.svg)
+
+<center><strong>Figura 1:</strong> As duas formas de desenhar um pacote. Repare que a posição do nome muda conforme o conteúdo é ou não exibido.</center>
+
 - **Aninhamento (*Nesting*):** um pacote desenhado **dentro** de outro indica que ele pertence ao pacote externo. É a forma mais direta de representar hierarquia. Existe também a notação alternativa com o **símbolo de círculo cruzado (⊕)** ligando o pacote pai aos filhos, útil quando desenhar um dentro do outro deixaria o diagrama grande demais.
+
+![Aninhamento por contenção e pelo símbolo de círculo cruzado](assets/GuiaDiagramaPacotes/aninhamento.svg)
+
+<center><strong>Figura 2:</strong> As duas notações de aninhamento dizem exatamente a mesma coisa a escolha é só de espaço no desenho.</center>
 
 - **Nome qualificado:** a UML usa `::` para separar níveis de hierarquia. Por exemplo, `Sistema::Integracao::AutenticacaoGovBr` identifica o pacote `AutenticacaoGovBr`, contido em `Integracao`, contido em `Sistema`. É a mesma ideia de um caminho de diretórios.
 
 - **Dependência (*Dependency*):** seta **tracejada com ponta aberta**, que parte do pacote **cliente** e aponta para o pacote **fornecedor**. Lê-se "o cliente depende do fornecedor", isto é, uma mudança no fornecedor pode quebrar o cliente. É o relacionamento mais usado no diagrama, e vem em três variações:
+
+  ![Seta de dependência ligando o pacote cliente ao pacote fornecedor](assets/GuiaDiagramaPacotes/dependencia.svg)
+
+  <center><strong>Figura 3:</strong> Sentido da seta de dependência. Inverter essa ponta é o erro mais comum na hora de ler o diagrama.</center>
 
   | Estereótipo | Significado |
   | :--- | :--- |
@@ -38,7 +50,11 @@ Um **pacote** é um agrupador de propósito geral: ele pode conter classes, inte
   | `«import»` | Importação **pública**: os elementos públicos do fornecedor passam a fazer parte do espaço de nomes do cliente e podem ser referenciados sem o nome qualificado. Quem depende do cliente também enxerga esses elementos. |
   | `«access»` | Importação **privada**: o cliente enxerga os elementos do fornecedor, mas não os repassa. Quem depende do cliente **não** enxerga o que veio do fornecedor. |
 
-- **Generalização entre pacotes:** seta com **triângulo vazado**, indicando que um pacote é uma especialização de outro — por exemplo, um pacote genérico `PersistenciaBD` especializado em `PersistenciaPostgres`. É pouco frequente, mas faz parte da notação.
+  ![Comparação entre import e access em uma cadeia de três pacotes](assets/GuiaDiagramaPacotes/import-access.svg)
+
+  <center><strong>Figura 4:</strong> A diferença entre «import» e «access» só aparece quando existe um terceiro pacote na cadeia: o primeiro é repassado adiante, o segundo para onde foi declarado.</center>
+
+- **Generalização entre pacotes:** seta com **triângulo vazado**, indicando que um pacote é uma especialização de outro por exemplo, um pacote genérico `PersistenciaBD` especializado em `PersistenciaPostgres`. É pouco frequente, mas faz parte da notação.
 
 - **Merge (`«merge»`):** funde o conteúdo de dois pacotes, combinando definições de mesmo nome. Aparece sobretudo em modelagem de metamodelos e raramente é necessário em projetos de disciplina.
 
@@ -54,9 +70,13 @@ Um **pacote** é um agrupador de propósito geral: ele pode conter classes, inte
 
 2. **Liste as responsabilidades.** Antes de criar qualquer caixa, escreva o que o sistema faz. Em projetos de Engenharia Reversa, essa lista costuma sair direto de artefatos anteriores como o BPMN ou o Rich Picture.
 
-3. **Escolha um critério de decomposição — um só.** Os dois mais comuns são:
+3. **Escolha um critério de decomposição um só.** Os dois mais comuns são:
    - **Por camada** (apresentação, aplicação, domínio, integração): bom quando as funcionalidades compartilham o mesmo caminho técnico.
    - **Por funcionalidade/domínio** (um pacote por área de negócio): bom quando as áreas são independentes entre si.
+
+   ![Comparação entre decomposição por camada e por funcionalidade](assets/GuiaDiagramaPacotes/criterios-decomposicao.svg)
+
+   <center><strong>Figura 5:</strong> Os dois critérios aplicados ao mesmo sistema. À direita, cada área de negócio carrega sua própria cópia das camadas — o que compensa quando as áreas são realmente independentes, e vira duplicação quando não são.</center>
 
    Misturar os dois critérios no mesmo nível é a origem mais comum de diagramas confusos.
 
@@ -66,9 +86,19 @@ Um **pacote** é um agrupador de propósito geral: ele pode conter classes, inte
 
 6. **Verifique se há ciclos.** Se `A` depende de `B` e `B` depende de `A`, os dois na prática são um pacote só, ou falta uma abstração (uma interface) entre eles. Ciclos são o principal defeito que este diagrama existe para revelar.
 
+   ![Dependência cíclica entre dois pacotes e a correção com um pacote de abstração compartilhada](assets/GuiaDiagramaPacotes/ciclo-dependencia.svg)
+
+   <center><strong>Figura 6:</strong> Um ciclo e a forma mais comum de desfazê-lo: extrair para um terceiro pacote aquilo de que os dois lados precisam.</center>
+
 7. **Estabilize o sentido das dependências.** Em arquitetura em camadas, a convenção é que elas fluam em um único sentido. Uma seta na contramão deve ser justificada ou eliminada.
 
 8. **Adicione legenda.** Se você usou estereótipos próprios ou cores para diferenciar tipos de pacote, explique-os em uma nota dentro do diagrama.
+
+Aplicando os oito passos a um sistema em camadas, o resultado tem mais ou menos esta cara:
+
+![Exemplo de diagrama de pacotes com quatro camadas, pacote transversal, fronteira do sistema e sistema externo](assets/GuiaDiagramaPacotes/camadas.svg)
+
+<center><strong>Figura 7:</strong> Exemplo completo reunindo os elementos da notação: camadas com dependências em sentido único, um pacote transversal, a fronteira do sistema e um sistema de terceiro desenhado fora dela.</center>
 
 ### Erros comuns a evitar
 
@@ -116,3 +146,4 @@ Ferramentas dedicadas à modelagem UML. Diferentemente de ferramentas de desenho
 | -- | -- | -- | -- |
 | [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | |
 | [Victor Leandro](https://github.com/Afrontoso) | Elaboração do Guia do Diagrama de Pacotes (Iniciativa Extra) | 15/09/2026 | |
+| [Victor Leandro](https://github.com/Afrontoso) | Inclusão das sete figuras ilustrando a notação, os critérios de decomposição e o exemplo em camadas | 16/09/2026 | |
