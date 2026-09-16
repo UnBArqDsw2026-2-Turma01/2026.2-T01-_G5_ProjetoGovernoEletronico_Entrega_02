@@ -105,3 +105,4 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 do documento | 16/09/2026 | [49119c4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/49119c4aa83aea0ca96363dbf53056a7dfb382e0) | 
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionar Figma | 16/09/2026 | [c49c2e7](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c49c2e7f338713f2ccf0bebdef2fc262a4eea01d) | 
