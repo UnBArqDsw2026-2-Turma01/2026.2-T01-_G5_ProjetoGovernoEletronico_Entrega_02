@@ -128,11 +128,33 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 
 ### Versão 3
 
-![Imagem Versao 3](../caminho/para/imagem.png)
+![Diagrama de Pacotes - Versão 3](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v3.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Terceira versão do Diagrama de Pacotes com decomposição completa da plataforma de Mini Apps e integrações externas</center>
 
-Oque voce modificou e porque modificou
+#### O Que Foi Modificado na Estrutura
+
+* **Decomposição e Detalhamento da Camada de Apresentação (`Apresentação «camada»`)**: Substituição e desmembramento do módulo genérico de mini apps em subpacotes de interface especializados: `CatalogoMiniApps.UI`, `Hemovida.UI`, `Transplantes.UI`, `CadernetasSaude.UI` e `SaudeMental.UI`
+
+* **Detalhamento da Camada de Aplicação (`Aplicação «camada»`)**: Expansão do orquestrador genérico de mini apps em gerenciadores dedicados de regras de negócio para cada categoria funcional: `GerenciadorCatalogoMiniApps`, `GestaoHemovida`, `GestaoTransplantes`, `GestaoCadernetas` e `GestaoSaudeMental`.
+
+* **Especialização do Domínio (`Domínio «camada»`)**: Inclusão de novas entidades de negócio essenciais para suportar as operações dos mini apps e do suporte de acolhimento emocional: `DoadorSangue`, `RegistroTransplante`, `CadernetaAcompanhamento` e `RegistroAcolhimento`.
+
+* **Criação dos Módulos de Integração e Sistemas Externos (`Integração «camada»`)**: Adição dos pacotes de integração `IntegracaoSNT` e `IntegracaoHemocentro`, conectados aos novos sistemas externos `SNT «sistema externo»` (Sistema Nacional de Transplantes) e `Rede de Hemocentros «sistema externo»`. Além disso, vinculação do pacote `Notificacoes` ao novo sistema externo `Serviço de Push «sistema externo»` (Provedor de Notificações, via protocolo REST / API).
+
+* **Padronização das Conexões UML e Correções de Dependência**: Correção  de todas as dependências entre pacotes no sentido top-down (de cima para baixo), eliminando o fluxo inverso entre camadas, rotulando todas as conexões com sistemas externos com o estereótipo `«use»` e seu respectivo protocolo técnico.
+
+#### Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)
+
+* **Isolamento de Responsabilidades e Arquitetura de Plataforma de Mini Apps (SRP)**: A decomposição do ecossistema de Mini Apps aplica o Princípio da Responsabilidade Única (SRP), permitindo que o aplicativo atue como uma plataforma modular de micro-frontends. Isso garante que a inclusão ou alteração de mini apps específicos ocorra de forma isolada, sem impactar a estabilidade do núcleo do app.
+
+* **Rastreabilidade de 1 para 1 com a Modelagem Dinâmica (BPMN)**: A reestruturação estabelece correspondência direta entre a arquitetura estática e os fluxos de controle modelados no BPMN. A V3 detalha o **subprocesso colapsado "Mini apps"** nas suas unidades de interface, aplicação, domínio e integração, complementando a decomposição do **subprocesso colapsado "Minha Saúde"** realizada na V2.
+
+* **Atendimento a Requisitos não Funcionais e Saúde Pública**: A criação dos pacotes `IntegracaoSNT` e `IntegracaoHemocentro` supre a necessidade técnica de interoperabilidade com o Sistema Nacional de Transplantes e com as redes regionais de bancos de sangue
+
+* **Extensibilidade e Autonomia do Ecossistema**: A modularização em pacotes específicos permite incorporar novas ferramentas de saúde pública (novas cadernetas, guias e serviços regionais) como módulos independentes, garantindo a evolução contínua da plataforma do Ministério da Saúde.
+
+* **Conformidade Notacional UML**: A eliminação da dependência ascendente (*bottom-up*), a conexão do pacote `Notificacoes` a um provedor externo de push e alinha o artefato aos padrões formais da OMG para arquiteturas organizacionais em camadas.
 
 ---
 
@@ -158,6 +180,7 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 1. SERRANO, Milene. *Arquitetura e Desenho de Software — Aula: Modelagem UML Estática*. Brasília: FGA/UnB, 2026. 1 arquivo PDF.
 2. OBJECT MANAGEMENT GROUP (OMG). *Unified Modeling Language (UML), Version 2.5.1*. Needham: OMG, 2017. Disponível em: https://www.omg.org/spec/UML/2.5.1/. Acesso em: 15 set. 2026.
 3. UML DIAGRAMS. *UML Package Diagrams Overview*. Disponível em: https://www.uml-diagrams.org/package-diagrams-overview.html. Acesso em: 15 set. 2026.
+4. GUEDES, Gilleanes T. A. UML 2 - Uma Abordagem Prática. 3. ed. São Paulo: Novatec Editora, 2018. ISBN 978-85-7522-646-9.
 
 ---
 
@@ -168,3 +191,4 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes | 17/09/2026 |  |
