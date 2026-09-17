@@ -29,8 +29,6 @@ Autenticação, Consentimento (LGPD) e Busca de Histórico Clínico no MEU SUS D
 
 ## Interface do Sistema (Imagens Reais)
 
-*(Colete os prints abaixo acessando o app Meu SUS Digital e coloque as imagens na pasta `assets/subequipe01-modelos/fluxograma/`)*
-
 ![Tela de Login do Gov.br](../assets/subequipe01-modelos/fluxograma/LoginGovBr.png)
 
 <center><strong>Legenda:</strong> Figura 1 - Tela inicial de redirecionamento e login via portal Gov.br</center>
