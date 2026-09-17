@@ -74,8 +74,8 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 ## 5. Pontos de Vista Individuais
 
-### Artur Galdino
-* **GitHub:** [@ArturFGaldino](https://github.com/ArturFGaldino)
+### Davi Ursulino
+* **GitHub:** [@DaviUrsulino](https://github.com/DaviUrsulino)
 
 * **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
@@ -84,8 +84,8 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 ---
 
-### Giovani Coelho
-* **GitHub:** [@Gotc2607](https://github.com/Gotc2607)
+### Gabriel Mota
+* **GitHub:** [@Gabro-MO](https://github.com/Gabro-MO)
 
 * **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
@@ -93,18 +93,8 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
   Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 ---
 
-### João Leles
-* **GitHub:** [@joaoleless](https://github.com/joaoleless)
-
-* **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-
-* **Lições Aprendidas:**
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-
----
-
-### Nicole Jovita
-* **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
+### Yasmim Santos
+* **GitHub:** [@eii-yahs](https://github.com/eii-yahs)
 
 * **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 
