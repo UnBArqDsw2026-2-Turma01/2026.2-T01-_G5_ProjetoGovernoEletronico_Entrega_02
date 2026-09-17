@@ -123,11 +123,34 @@ O que mudou desde a Versão 1.0: o diagrama agora está contido numa moldura UML
 
 **Autoria:** [Giovani Coelho](https://github.com/Gotc2607)
 
-![Imagem Versão 3](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v3.0.jpg)
+![Imagem Versão 3](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v3.0.png)
 
-<center><strong>Legenda:</strong> Inserir legenda </center>
+**Legenda:** Evolução do Diagrama de Colaboração com inclusão de caminhos alternativos e detalhamento do consumo da RNDS
 
-Explicar o que foi feito.
+O que mudou desde a Versão 1.1: adicionamos a representação do que acontece quando o fluxo de segurança falha, inserindo a mensagem de retorno `2.2.4: [assinaturaInvalida] negarAcesso()` do `auth:AuthService` para o `app:AppMeuSUS`. Substituímos parâmetros genéricos nas assinaturas dos métodos pelos parâmetros reais exigidos pelo protocolo OAuth 2.0 e PKCE (como `requestAuthCode(client_id, code_challenge, code_challenge_method=S256)` no passo `1.2` e explicitação do cabeçalho HTTP `Authorization: Bearer jwt` no passo `3.2`). Por fim, expandimos o ciclo de vida do diagrama para detalhar o consumo de dados clínicos na RNDS (passos `4` e `4.1` com `buscarHistoricoVacinas` e `retornarBundleFHIR`), fechando o fluxo de ponta a ponta e conectando o esforço de autenticação ao objetivo final do negócio. Essas modificações demonstram a resiliência do sistema com guardas negativas e elevam o nível técnico da documentação com os protocolos reais da indústria.
+
+## Convenções Visuais e Legenda do Modelo
+
+- **Moldura do Diagrama (Diagram Frame):** retângulo que delimita o escopo do caso de uso, com o pentágono de cabeçalho no canto superior esquerdo trazendo o tipo do diagrama (`communication`) e o nome do elemento proprietário.
+- **Ator Principal (Actor Lifeline):** representado pelo ícone de boneco (*stick figure*), sinalizando visualmente o ator humano que dispara a jornada.
+- **Objetos / Instâncias (`instancia: Classe`):** representam os componentes e instâncias operacionais do ecossistema, nomeados explicitamente (nome da instância + nome da classe).
+- **Enlaces de Comunicação (linhas contínuas):** explicitam os caminhos de comunicação diretamente estabelecidos entre dois objetos.
+- **Setas de Disparo:** apontam o sentido da chamada de método entre os objetos.
+- **Sequência Numérica Aninhada (`1`, `1.1`, `2.2.1`):** define a ordem cronológica exata de execução; a numeração decimal ramificada mapeia a hierarquia de métodos chamados durante o tempo de ativação de uma operação superior.
+- **Expressões de Guarda (`[condição]`):** condicionantes de negócio aplicadas ao envio das mensagens.
+
+## Mapeamento de Objetos e Responsabilidades
+
+| Objeto / Papel | Tipo / Camada | Responsabilidade no Fluxo |
+|---|---|---|
+| `c: Cidadão` | Ator Externo | Cidadão que interage com a interface do aplicativo. |
+| `app: AppMeuSUS` | Frontend / Cliente | Cliente móvel que coordena a navegação e a renderização da interface. |
+| `auth: AuthService` | Controller / Segurança | Controlador responsável pela geração do desafio PKCE e validação dos tokens JWT (RS256/JWKS). |
+| `gov: GovBrProvider` | Serviço Externo | Provedor federado de identidade responsável pela autenticação e emissão do *Auth Code*. |
+| `consent: ConsentManager` | Serviço / Negócio | Gerenciador que valida e coleta o aceite explícito dos Termos de Uso e Política de Privacidade (LGPD). |
+| `audit: AuditLogger` | Repositório / Segurança | Serviço de auditoria que registra logs imutáveis acompanhados de Hash SHA-256. |
+| `storage: SecureStorage` | Armazenamento Local | Cofre criptografado local (*KeyStore/Keychain*) para persistência dos tokens de acesso. |
+| `rnds: RNDSClient` | Cliente de API / Integração | Módulo de comunicação com a Rede Nacional de Dados em Saúde via mTLS/HL7 FHIR. |
 
 ---
 
@@ -165,3 +188,4 @@ INSERIR METODOLOGIA NO FINAL
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Nicole Jovita](https://github.com/nicolejovita) | Fundamentação teórica, estruturação do documento, legenda e elaboração da Versão 1.0 | 15/09/2026 | |
+| [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.2 da modelagem dinâmica (tratamento de exceções e RNDS) | 16/09/2026 | [87755fc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/87755fc) |
