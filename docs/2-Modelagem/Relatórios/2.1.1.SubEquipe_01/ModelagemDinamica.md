@@ -123,11 +123,27 @@ O que mudou desde a Versão 1.0: o diagrama agora está contido numa moldura UML
 
 **Autoria:** [Giovani Coelho](https://github.com/Gotc2607)
 
-![Imagem Versão 3](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v3.0.jpg)
+![Imagem Versão 3](../assets/subequipe01-modelos/modelagem-dinamica/modelagem-dinamica-v3.0.png)
 
-<center><strong>Legenda:</strong> Inserir legenda </center>
+<center><strong>Legenda:</strong> Evolução do Diagrama de Colaboração com inclusão de caminhos alternativos e detalhamento do consumo da RNDS.</center>
 
-Explicar o que foi feito.
+**O Que Foi Modificado na Estrutura**
+* **Inclusão de Caminhos Alternativos (Tratamento de Exceções):** Adicionamos a representação do que acontece quando o fluxo de segurança falha, saindo do modelo focado apenas no "caminho feliz".
+  * *Onde no diagrama:* Criamos a mensagem de retorno `2.2.4: [assinaturaInvalida] negarAcesso()`, saindo do `auth:AuthService` de volta para o `app:AppMeuSUS`.
+* **Rigor Técnico nos Parâmetros de Segurança (OAuth 2.0 e PKCE):** Substituímos parâmetros genéricos nas assinaturas dos métodos pelos parâmetros reais exigidos pelos protocolos de segurança da indústria.
+  * *Onde no diagrama:* 
+    * Passo `1.2`: Alterado para `requestAuthCode(client_id, code_challenge, code_challenge_method=S256)`.
+    * Passo `2.2`: Alterado para `requestToken(grant_type=authorization_code, code, code_verifier)`.
+    * Passo `3.2`: Alterado para explicitar o cabeçalho HTTP de segurança: `getRecursosSaude(Authorization: Bearer jwt)`.
+* **Detalhamento do Consumo de Dados Clínicos (RNDS):** Expandimos o ciclo de vida do diagrama para além da fase de login e aceite de termos, mostrando o momento exato em que o aplicativo entrega valor ao usuário buscando dados de saúde.
+  * *Onde no diagrama:*
+    * Passo `4`: Nova chamada do App para a RNDS: `buscarHistoricoVacinas(jwt)`.
+    * Passo `4.1`: Retorno da RNDS para o App usando o padrão de interoperabilidade em saúde: `retornarBundleFHIR(dadosVacinacao)`.
+
+**Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)**
+* A modelagem de **guardas negativas** (`[assinaturaInvalida]`) demonstra a resiliência do sistema e reflete de maneira adequada as restrições da UML Dinâmica.
+* O detalhamento dos parâmetros de **OAuth 2.0 e PKCE** eleva o nível técnico da documentação, comprovando que a arquitetura reflete fielmente as restrições e necessidades de uma integração corporativa real.
+* A expansão do fluxo para a **RNDS** conecta o esforço de infraestrutura (autenticação) com o objetivo final do negócio (visualizar a carteira de vacinação), fechando o fluxo de ponta a ponta.
 
 ---
 
@@ -165,3 +181,4 @@ INSERIR METODOLOGIA NO FINAL
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Nicole Jovita](https://github.com/nicolejovita) | Fundamentação teórica, estruturação do documento, legenda e elaboração da Versão 1.0 | 15/09/2026 | |
+| [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.2 da modelagem dinâmica (tratamento de exceções e RNDS) | 16/09/2026 | |
