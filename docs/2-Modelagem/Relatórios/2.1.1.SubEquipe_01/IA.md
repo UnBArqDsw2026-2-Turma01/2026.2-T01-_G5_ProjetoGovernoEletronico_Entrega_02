@@ -4,7 +4,7 @@
 
 ## 1. Descrição e Objetivo
 
-Este documento registra o apoio e o uso de ferramentas de **Inteligência Artificial Generativa (IAG)** na **Entrega 2** pela **SubEquipe XX**. O objetivo é apresentar com transparência, senso crítico e rastreabilidade como os modelos de linguagem foram utilizados no processo de engenharia de software, na construção e validação da **Modelagem Estática (Diagrama de XXXXX)** e da **Modelagem Dinâmica (Diagrama de XXXXX)**, bem como na documentação no MkDocs.
+Este documento registra o apoio e o uso de ferramentas de **Inteligência Artificial Generativa (IAG)** na **Entrega 2** pela **SubEquipe XX**. O objetivo é apresentar com transparência, senso crítico e rastreabilidade como os modelos de linguagem foram utilizados no processo de engenharia de software, na construção e validação da **Modelagem Estática (Diagrama de XXXXX)** e da **Modelagem Dinâmica (Diagrama de Colaboração)**, bem como na documentação no MkDocs.
 
 A abordagem adotada priorizou o uso da IA como um **agente colaborador e acelerador**, mantendo o rigor técnico, a revisão humana constante e a tomada de decisão final sob responsabilidade exclusiva dos integrantes da equipe.
 
@@ -22,7 +22,7 @@ A coleta de depoimentos e dados de uso ocorreu de forma **assíncrona e individu
 
 ## 3. Experimento com IA Generativa nas Modelagens (opcional)
 
-Como parte da avaliação das versões finais da entrega, a subequipe realizou um **experimento de geração e validação** aplicável às duas frentes de modelagem da Entrega 2:
+Como parte da avaliação das versões finais da entrega, a subequipe realizou um **experimento de geração e validação** focado nas modelagens da Entrega 2:
 
 ### Experimento 01: Modelagem Estática (Diagrama de XXXXX)
 #### Objetivo: 
@@ -36,25 +36,30 @@ Descrever o objetivo do teste com IA.
 
 <center><strong>Legenda:</strong> Inserir legenda</center>
 
-
 #### **Análise Crítica e Intervenção Humana:** 
 Explicar pontos que a IA corrigiu e o que foi acatado pela equipe ou não e por que - citar extrapolação e limites do uso da IA.
 
-### Experimento 02: Modelagem Dinâmica (Diagrama de XXXXX)
+### Experimento 02: Modelagem Dinâmica (Diagrama de Colaboração)
 #### Objetivo: 
-Descrever o objetivo do teste com IA.
+Validar a capacidade de uma IA Generativa (via prompt com arquitetura de contexto) em abstrair as regras de negócio de integração (Meu SUS Digital, Gov.br e RNDS) e gerar um Diagrama de Colaboração (Comunicação) alinhado com a UML 2.0.
+
 #### Resultado Obtido: 
-(inserir imagem do resultado da versão gerada por IA)
+![Diagrama gerado pela IA](../assets/subequipe01-modelos/modelagem-dinamica/Versão1-DiagramaColaboracao-IA.jpeg)
 
-<center><strong>Legenda:</strong> Inserir legenda</center>
+<center><strong>Legenda:</strong> Primeira versão do Diagrama de Colaboração gerado integralmente pela IA Gemini com base no contexto textual.</center>
 
-(imagem do prompt dado)
+#### **Análise Crítica e Intervenção Humana (Comparação com a Versão da Equipe):** 
+Ao compararmos o resultado gerado pela IA (Gemini) com as versões construídas manualmente pela equipe (Versões 1.0 a 1.2), notamos os seguintes pontos:
 
-<center><strong>Legenda:</strong> Inserir legenda</center>
+**O que a IA (Gemini) acertou:**
+* **Mapeamento de Atores e Instâncias:** A IA instanciou perfeitamente todos os papéis (ex: `c: Cidadão`, `app: AppMeuSUS`, `auth: AuthService`) exigidos pelo contexto.
+* **Ordem Numérica:** Aplicou corretamente a numeração decimal aninhada (ex: `1.1`, `1.1.1`, `1.2`) para denotar as chamadas síncronas e delegadas entre o hub (App) e os serviços externos.
+* **Uso de Guardas:** Empregou corretamente as condições `[tokensValidos]` antes de prosseguir com chamadas de rede e persistência.
 
-
-#### **Análise Crítica e Intervenção Humana:** 
-Explicar pontos que a IA corrigiu e o que foi acatado pela equipe ou não e por que - citar extrapolação e limites do uso da IA.
+**O que a IA errou (Limites e Correções Humanas Necessárias):**
+* **Sintaxe Visual da UML 2.0:** O Gemini modelou os enlaces de comunicação como se fossem setas direcionais longas ligando as caixas. Na especificação formal da UML para diagramas de comunicação, o enlace (link) é uma linha contínua, e a *seta de mensagem* é um vetor curto desenhado paralelo à linha, próximo ao rótulo textual. O modelo da equipe (v1.1 e v1.2) respeita melhor essa anatomia.
+* **Falta de Caminhos de Exceção:** A IA incluiu guardas validando o estado feliz, mas foi incapaz de modelar autonomamente o que acontece no cenário de falha (ex: quando o token é inválido). A intervenção humana na Versão 1.2 da equipe foi justamente adicionar os retornos alternativos (ex: `negarAcesso()`), demonstrando resiliência arquitetural.
+* **Conclusão:** O uso da IA Generativa como o Gemini é excepcional para criar um esboço rápido (*brainstorming* estrutural), mas a formatação canônica da UML e as regras de tratamento de erros devem ser guiadas pelo refinamento crítico da equipe de arquitetura.
 
 ---
 
@@ -62,13 +67,13 @@ Explicar pontos que a IA corrigiu e o que foi acatado pela equipe ou não e por 
 
 Abaixo estão consolidados os aspectos avaliados durante a experimentação de IA Generativa na construção e validação dos artefatos de modelagem:
 
-* **Cobertura Conceitual:** XXXXX.
-* **Legibilidade e Organização:** XXXXX.
-* **Aderência à Técnica UML:** XXXXX.
-* **Influência do Prompting:** XXXXX.
-* **Editabilidade dos Artefatos:** OXXXXX.
-* **Confiabilidade e Validação:** XXXXX.
-* **Limites do Experimento:** XXXXX.
+* **Cobertura Conceitual:** O Gemini conseguiu cobrir bem todos os atores e serviços envolvidos no ecossistema (App, Cidadão, RNDS, Gov.br), refletindo fielmente os objetos fornecidos no prompt.
+* **Legibilidade e Organização:** O diagrama gerado distribuiu bem as instâncias ao redor do AppMeuSUS, facilitando a leitura inicial das trocas de mensagens na arquitetura.
+* **Aderência à Técnica UML:** Baixa aderência visual à UML 2.0. Os enlaces de comunicação foram desenhados incorretamente como setas direcionais longas. Por outro lado, o emprego da numeração decimal aninhada das mensagens e expressões de guarda foi satisfatório.
+* **Influência do Prompting:** Foi essencial fornecer o escopo arquitetural rigoroso previamente. A precisão na identificação dos sistemas externos só ocorreu porque o prompt já declarava o papel de "Facade" da plataforma.
+* **Editabilidade dos Artefatos:** O fato de a IA entregar o código em PlantUML facilitou testes rápidos, porém a limitação da própria engine do PlantUML em renderizar Diagramas de Colaboração precisos frustrou refinamentos mais finos por código.
+* **Confiabilidade e Validação:** O fluxo principal ("caminho feliz") mostrou-se confiável, mas as omissões dos tratamentos de exceção (ex: falha de token) exigiram que a equipe expandisse as regras de negócio de forma manual.
+* **Limites do Experimento:** O teste confirmou que a IA é muito útil para *brainstorming* e rascunho de estruturas relacionais, mas não substitui a modelagem criteriosa de exceções, resiliência e rigor formal exigidos pela UML.
 
 ---
 
