@@ -3,7 +3,6 @@
 ---
 
 ## Participantes da SubEquipe 1
-
 | Nome do Membro | 
 | :--- |
 | [Artur Galdino](https://github.com/ArturFGaldino) |
@@ -16,23 +15,33 @@
 ## Mapeamento do Fluxo
 
 ### Nome do Fluxo
-*Inserir aqui o nome do fluxo ou funcionalidade mapeada (ex.: Navegação Principal Pós-Login)*
+Autenticação, Consentimento (LGPD) e Busca de Histórico Clínico no MEU SUS DIGITAL
 
 ### Passo a Passo do Fluxo
 
-De o passo a passo do seu fluxograma
+1. **Acesso e Redirecionamento (Gov.br):** O cidadão abre o aplicativo "Meu SUS Digital" e seleciona a opção de entrar. O aplicativo redireciona o usuário para a página segura do provedor de identidade do governo (gov.br).
+2. **Autenticação Segura:** O usuário insere suas credenciais (CPF e Senha) na interface externa. Após validação, o gov.br devolve um token de sessão válido para o aplicativo.
+3. **Gestão de Consentimento:** O aplicativo verifica se o usuário já aceitou os Termos de Uso e Política de Privacidade. Caso haja alguma pendência legal, a tela de consentimento (LGPD) é exibida para coleta do aceite explícito.
+4. **Navegação no Histórico Clínico:** Com a sessão liberada, o usuário clica na seção de Saúde (ex: "Vacinas" ou "Exames") solicitando seu histórico.
+5. **Busca na RNDS e Renderização:** O aplicativo faz uma consulta assíncrona na base da Rede Nacional de Dados em Saúde (RNDS). Ao obter sucesso, renderiza os dados (ex: Cartão de Vacina) na interface do usuário. Caso a rede falhe, apresenta a tela de indisponibilidade.
 
 ---
 
 ## Interface do Sistema (Imagens Reais)
 
-![Tela Real do Sistema - Passo 1](../assets/caminho/para/print_tela_1.png)
+*(Colete os prints abaixo acessando o app Meu SUS Digital e coloque as imagens na pasta `assets/subequipe01-modelos/fluxograma/`)*
 
-<center><strong>Legenda:</strong> Figura 1 - Tela do sistema real referente ao início do fluxo</center>
+![Tela de Login do Gov.br](../assets/subequipe01-modelos/fluxograma/LoginGovBr.png)
 
-![Tela Real do Sistema - Passo 2](../assets/caminho/para/print_tela_2.png)
+<center><strong>Legenda:</strong> Figura 1 - Tela inicial de redirecionamento e login via portal Gov.br</center>
 
-<center><strong>Legenda:</strong> Figura 2 - Tela do sistema real referente à interação/navegação principal</center>
+![Tela de Consentimento/Termos de Uso](../assets/subequipe01-modelos/fluxograma/Consentimento.png)
+
+<center><strong>Legenda:</strong> Figura 2 - Tela de aviso sobre Política de Privacidade e Tratamento de Dados (LGPD)</center>
+
+![Tela de Histórico (ex: Vacinas ou Exames)](../assets/subequipe01-modelos/fluxograma/HistoricoRNDS.png)
+
+<center><strong>Legenda:</strong> Figura 3 - Interface de exibição dos dados de saúde consumidos da base da RNDS</center>
 
 ---
 
@@ -40,4 +49,4 @@ De o passo a passo do seu fluxograma
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do documento de fluxo | 17/09/2026 | [df5d7d2](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/df5d7d2a5c4c247e7cf9c9b98a3c234674aee3a4) |
+| [Giovani Coelho](https://github.com/Gotc2607) | Criação da estrutura do fluxograma e descrição dos passos da jornada | 17/09/2026 | [a-definir] |
