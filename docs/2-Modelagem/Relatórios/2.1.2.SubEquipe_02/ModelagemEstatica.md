@@ -191,4 +191,4 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes | 17/09/2026 |  |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes e atualização da documentação estática | 17/09/2026 | [7dacf92](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7dacf92) |
