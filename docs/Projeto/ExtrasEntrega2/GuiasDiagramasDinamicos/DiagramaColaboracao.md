@@ -148,4 +148,4 @@ Plataforma de quadro branco colaborativo online que permite criar diagramas de f
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
 | [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | [3227304](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3227304c3509461ab58ddf498320e2a16272fe7d) |
-| [João Leles](https://github.com/joaoleless) | Criação do guia do diagram de colaboração | 17/09/2026 | [3227304](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3227304c3509461ab58ddf498320e2a16272fe7d) |
+| [João Leles](https://github.com/joaoleless) | Criação do guia do diagram de colaboração | 17/09/2026 | [62661bb](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/62661bb64c8419a3662c1ff42a208d4a4faa0657) |
