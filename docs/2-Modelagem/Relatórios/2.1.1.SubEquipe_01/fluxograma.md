@@ -49,4 +49,4 @@ Autenticação, Consentimento (LGPD) e Busca de Histórico Clínico no MEU SUS D
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Giovani Coelho](https://github.com/Gotc2607) | Criação da estrutura do fluxograma e descrição dos passos da jornada | 17/09/2026 | [a-definir] |
+| [Giovani Coelho](https://github.com/Gotc2607) | Criação da estrutura do fluxograma e descrição dos passos da jornada | 17/09/2026 | [a859de6](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/a859de6aaa86883152dd4f48e04eee053e09a1e5) |
