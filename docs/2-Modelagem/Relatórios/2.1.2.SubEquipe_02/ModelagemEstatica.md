@@ -6,7 +6,7 @@ A modelagem estática da SubEquipe 02 foi feita com o **Diagrama de Pacotes** da
 
 ## Versão Final
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 8px;" width="100%" height="450" src="https://www.figma.com/board/EMs5IeE2EYVVNnXhxXQ6DB/Sem-t%C3%ADtulo?node-id=0-1&t=fuGpuQiwYC0EbL9U-1" allowfullscreen></iframe>
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/EMs5IeE2EYVVNnXhxXQ6DB/Sem-t%C3%ADtulo?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
 <center><strong>Legenda:</strong> Diagrama de Pacotes do Meu SUS Digital.</center>
 
@@ -167,4 +167,4 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
