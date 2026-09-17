@@ -181,4 +181,4 @@ INSERIR METODOLOGIA NO FINAL
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Nicole Jovita](https://github.com/nicolejovita) | Fundamentação teórica, estruturação do documento, legenda e elaboração da Versão 1.0 | 15/09/2026 | |
-| [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.2 da modelagem dinâmica (tratamento de exceções e RNDS) | 16/09/2026 | |
+| [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.2 da modelagem dinâmica (tratamento de exceções e RNDS) | 16/09/2026 | [87755fc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/87755fc) |
