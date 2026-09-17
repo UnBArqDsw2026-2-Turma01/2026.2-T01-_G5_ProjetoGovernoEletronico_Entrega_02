@@ -15,7 +15,7 @@ Esta pasta contém o registro das atas de reuniões e alinhamentos internos espe
 
 ## Gravação da Reunião
 
-<iframe src="" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
+<iframe src="https://drive.google.com/file/d/1BKvbjM6bztaGislSCF9CIeCztcLhQRs_/preview" width="640" height="360" allow="autoplay" allowfullscreen></iframe>
 
 ---
 
