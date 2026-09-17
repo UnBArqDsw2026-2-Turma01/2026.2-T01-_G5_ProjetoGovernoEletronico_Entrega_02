@@ -70,25 +70,24 @@ A comparação entre o resultado gerado pela IA e a **Versão 1.0** do diagrama 
 
 ### Experimento 02: Modelagem Dinâmica (Diagrama de Colaboração)
 #### Objetivo: 
-Validar a capacidade de uma IA Generativa (via prompt com arquitetura de contexto) em abstrair as regras de negócio de integração (Meu SUS Digital, Gov.br e RNDS) e gerar um Diagrama de Colaboração (Comunicação) alinhado com a UML 2.0.
+Verificar se uma IA generativa (Gemini) é capaz de produzir um **Diagrama de Colaboração (Comunicação) UML** coerente com as regras de negócio do aplicativo **MeuSUS Digital**, a partir de instruções textuais e de contexto. Para isso, foi fornecido um prompt detalhando a arquitetura de integrações síncronas e delegadas entre o aplicativo, o Provedor de Identidade (Gov.br) e o repositório de dados clínicos (RNDS). O resultado gerado pela IA foi então comparado com as **Versões 1.1 e 1.2** do diagrama construído manualmente pela subequipe (com participação de [Giovani Coelho](https://github.com/Gotc2607) e [João Leles](https://github.com/joaoleless)), com o objetivo de identificar diferenças na formatação, tratamento de falhas e rigor sintático da UML.
 
 #### Resultado Obtido: 
-![Diagrama gerado pela IA](../assets/subequipe01-modelos/modelagem-dinamica/Versão1-DiagramaColaboracao-IA.jpeg)
+![Resultado](../assets/subequipe01-modelos/modelagem-dinamica/Versão1-DiagramaColaboracao-IA.jpeg)
 
-<center><strong>Legenda:</strong> Primeira versão do Diagrama de Colaboração gerado integralmente pela IA Gemini com base no contexto textual.</center>
+<center><strong>Legenda:</strong> Diagrama de Colaboração gerado pela IA Gemini com base no contexto textual</center>
 
-#### **Análise Crítica e Intervenção Humana (Comparação com a Versão da Equipe):** 
-Ao compararmos o resultado gerado pela IA (Gemini) com as versões construídas manualmente pela equipe (Versões 1.0 a 1.2), notamos os seguintes pontos:
+A IA gerou um diagrama distribuindo as instâncias de maneira radial, em que o aplicativo MeuSUS Digital funciona como um hub central, invocando e repassando requisições aos demais microsserviços.
 
-**O que a IA (Gemini) acertou:**
-* **Mapeamento de Atores e Instâncias:** A IA instanciou perfeitamente todos os papéis (ex: `c: Cidadão`, `app: AppMeuSUS`, `auth: AuthService`) exigidos pelo contexto.
-* **Ordem Numérica:** Aplicou corretamente a numeração decimal aninhada (ex: `1.1`, `1.1.1`, `1.2`) para denotar as chamadas síncronas e delegadas entre o hub (App) e os serviços externos.
-* **Uso de Guardas:** Empregou corretamente as condições `[tokensValidos]` antes de prosseguir com chamadas de rede e persistência.
+#### **Análise Crítica e Intervenção Humana:** 
+A comparação entre o resultado gerado pela IA e as versões elaboradas pela equipe revelou diferenças estruturais e conceituais expressivas:
 
-**O que a IA errou (Limites e Correções Humanas Necessárias):**
-* **Sintaxe Visual da UML 2.0:** O Gemini modelou os enlaces de comunicação como se fossem setas direcionais longas ligando as caixas. Na especificação formal da UML para diagramas de comunicação, o enlace (link) é uma linha contínua, e a *seta de mensagem* é um vetor curto desenhado paralelo à linha, próximo ao rótulo textual. O modelo da equipe (v1.1 e v1.2) respeita melhor essa anatomia.
-* **Falta de Caminhos de Exceção:** A IA incluiu guardas validando o estado feliz, mas foi incapaz de modelar autonomamente o que acontece no cenário de falha (ex: quando o token é inválido). A intervenção humana na Versão 1.2 da equipe foi justamente adicionar os retornos alternativos (ex: `negarAcesso()`), demonstrando resiliência arquitetural.
-* **Conclusão:** O uso da IA Generativa como o Gemini é excepcional para criar um esboço rápido (*brainstorming* estrutural), mas a formatação canônica da UML e as regras de tratamento de erros devem ser guiadas pelo refinamento crítico da equipe de arquitetura.
+1. **Mapeamento e distribuição de atores:** a IA demonstrou ótima capacidade de interpretação ao instanciar perfeitamente todos os papéis (ex.: `c: Cidadão`, `app: AppMeuSUS`, `auth: AuthService`) exigidos pelo contexto, espalhando os objetos adequadamente ao redor do app principal. A versão da equipe aproveitou essa boa estruturação espacial.
+2. **Ordens e rotulagem numérica:** a IA aplicou corretamente a numeração decimal aninhada (ex.: `1.1`, `1.1.1`, `1.2`) para distinguir chamadas síncronas de fluxos delegados e expressou bem os casos de uso de guardas como `[tokensValidos]`.
+3. **Sintaxe Visual da UML 2.0:** a IA modelou os enlaces de comunicação de forma rudimentar, utilizando setas direcionais longas ligando as bordas das caixas diretamente (mais parecido com um diagrama de dependências livre). A versão da equipe aplicou o padrão canônico da UML, onde o enlace é uma linha contínua, acompanhada de um pequeno vetor de mensagem paralelo à linha, conferindo rigor visual ao diagrama.
+4. **Falta de Caminhos de Exceção:** a IA foi incapaz de modelar autonomamente o que acontece em um cenário de falha. Todo o fluxo gerado baseia-se exclusivamente no "caminho feliz". A intervenção humana nas versões da equipe (especialmente a 1.2) precisou resolver isso, adicionando os retornos e rotas alternativas (como os métodos `negarAcesso()` em caso de falha de assinatura OAuth), o que demonstrou uma visão mais aprofundada de resiliência arquitetural.
+
+**Conclusão do Experimento:** a IA Generativa como o Gemini é excelente para realizar um *brainstorming* rápido, posicionando objetos e distribuindo lógicas sequenciais. Contudo, ela peca na precisão do traço (não respeitando regras finas de notação UML) e omite a complexidade de tratamentos de exceção. A equipe validou que o insumo da IA deve servir apenas como rascunho lógico (ou *wireframe* estrutural), exigindo revisão técnica fina para a versão final de produção.
 
 ---
 
