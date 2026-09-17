@@ -2,7 +2,7 @@
 
 ---
 
-## Participantes
+## Participantes da SubEquipe 3
 
 | Nome do Membro                                               |
 | :----------------------------------------------------------- |
@@ -39,4 +39,4 @@ De o passo a passo do seu fluxograma
 
 | Nome do Membro | Contribuição | Data | Commit |
 | :--- | :--- | :--- | :--- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do documento de fluxo | 17/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do documento de fluxo | 17/09/2026 | [df5d7d2](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/df5d7d2a5c4c247e7cf9c9b98a3c234674aee3a4) |
