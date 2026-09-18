@@ -70,11 +70,130 @@ Cada classe segue a estrutura de 3 compartimentos (Nome / Atributos / Operaçõe
 
 ### Versão 3
 
-![Imagem Versao 3](../caminho/para/imagem.png)
+![Imagem Versao 3](../assets/diagrama-de-classes-v3.drawio.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Diagrama de Classes (Versão 3) do domínio "Meu SUS Digital", elaborado por Yasmim de Souza Santos.</center>
 
-Oque voce modificou e porque modificou
+#### O que foi alterado em relação à Versão 2
+
+A Versão 2 introduziu a classe `AppMeuSus` como fachada da aplicação (substituindo as associações diretas `Usuario`–`UnidadeDeSaude` e `Usuario`–`Conteudo` da V1 por `Usuario` → `AppMeuSus` → {`UnidadeDeSaude`, `Conteudo`}), refletindo a mesma separação de responsabilidades já identificada na Modelagem Dinâmica (objetos `:TelaBusca`, `:RedeService`, `:ConteudoService`). Essa classe e os relacionamentos que ela participa (Acessa, Autentica, É exibido por, Consulta) foram mantidos sem nenhuma alteração nesta V3.
+
+Como fechamento, o trabalho desta versão incidiu sobre as demais classes do domínio, com dois objetivos:
+
+1. **Fechar a lacuna do fluxo "Rede de Saúde"**: até a V2, a chegada ao Google Maps (último passo do fluxo reconstruído via Engenharia Reversa e modelado no BPMN — "Abrir rota até a unidade no Google Maps") não tinha nenhuma representação estática. O Diagrama de Colaboração `FindRedeDeSaude` (Modelagem Dinâmica) já havia identificado esse ponto como um objeto `:MapService`, então esta versão traduz esse papel para uma classe no diagrama estático.
+2. **Detalhar atributos e operações** das classes que chegaram à V2 apenas com o compartimento de atributos preenchido (`Categoria` e `Especialidade` estavam sem nenhuma operação) ou com operações genéricas/mal formatadas demais para o comportamento real observado na Engenharia Reversa (`Conteudo`, `UnidadeDeSaude`).
+
+##### 1. Classe nova: `GoogleMaps` («Serviço Externo»)
+
+| Atributo | Tipo | Justificativa |
+| --- | --- | --- |
+| `- urlBase` | String | URL/endpoint base usado para montar a rota (equivalente ao `token`/`nivelConfianca` que já existem em `ContaGovBr` para representar outro serviço externo — o gov.br). |
+
+| Operação | Retorno | Justificativa |
+| --- | --- | --- |
+| `+ abrirRota(destino : UnidadeDeSaude)` | void | Ação executada ao clicar em "Ver no mapa" na tela de resultado (`02-maternidade-resultado.png`), correspondente à atividade "Abrir rota até a unidade no Google Maps" no BPMN do fluxo Rede de Saúde. |
+
+**Relacionamento:** `UnidadeDeSaude` ┄┄`verNoMapa()`┄┄► `GoogleMaps` — modelada como dependência (linha tracejada), e não como associação/agregação, pelo mesmo motivo já usado para `ContaGovBr`↔`AppMeuSus`: o Google Maps é um serviço externo ao domínio do "Meu SUS Digital" (não é uma entidade que o sistema persiste ou possui), então `UnidadeDeSaude` apenas usa esse serviço no momento da chamada, sem manter uma referência permanente a ele. A seta aponta de quem depende (`UnidadeDeSaude`, o cliente que precisa da rota) para quem é o fornecedor do serviço (`GoogleMaps`).
+
+Optamos por não modelar `Localizacao`/`Coordenada` como uma classe à parte nesta versão — os pares latitude/longitude foram adicionados diretamente como atributos de `UnidadeDeSaude` (ver seção 5), por ser a solução mais simples que ainda suporta o método `verNoMapa()`. Como esta é a versão de fechamento, essa é registrada como uma possível evolução futura (fora do escopo desta entrega), caso o time queira extrair um Value Object `Coordenada` em uma iteração posterior.
+
+##### 2. `PerfilSaude`
+
+| Atributo | Tipo | Status |
+| --- | --- | --- |
+| `- numeroCartaoSus` | String | mantido da V2 |
+| `- tipoSanguineo` | String | mantido da V2 |
+| `- alergias` | String | novo — campo de saúde recorrente em cadastros desse tipo, dá suporte a um cartão de saúde mais completo |
+
+| Operação | Retorno | Status |
+| --- | --- | --- |
+| `+ atualizarDados()` | void | mantido da V2 |
+| `+ visualizarCartaoSus()` | void | novo — o Meu SUS Digital oferece a visualização do Cartão SUS digital a partir do perfil; adicionamos a operação correspondente |
+
+##### 3. `Usuario`
+
+Mantido como na V2 — `cpf`, `nome`, `cns` e `+ consultarPerfil()` já cobriam bem o papel de entidade de identidade do cidadão dentro do domínio. Apenas explicitamos o tipo de retorno: `+ consultarPerfil() : PerfilSaude`.
+
+##### 4. `ContaGovBr`
+
+| Atributo | Tipo | Status |
+| --- | --- | --- |
+| `- token` | String | mantido da V2 |
+| `- nivelConfianca` | String | mantido da V2 |
+| `- dataExpiracao` | Date | novo — todo token de sessão federada (gov.br) tem expiração; sem esse campo não é possível justificar a necessidade de `renovarToken()` |
+
+| Operação | Retorno | Status |
+| --- | --- | --- |
+| `+ validarToken()` | Boolean | tipo de retorno explicitado (antes sem retorno declarado) |
+| `+ renovarToken()` | Boolean | novo — complementa `validarToken()` no ciclo de vida da sessão gov.br |
+
+##### 5. `UnidadeDeSaude`
+
+| Atributo | Tipo | Status |
+| --- | --- | --- |
+| `- nome` | String | mantido |
+| `- endereco` | String | mantido |
+| `- tipo` | String | mantido (valores observados na Engenharia Reversa: Médicos Especialistas, Hospital, Unidade Básica de Saúde, Maternidade, Atenção Psicossocial, Academia da Saúde, Saúde Bucal, Doenças Raras, Transplante, Serviços Hemoterápicos, Atendimento Antiveneno) |
+| `- latitude` | Double | novo — necessário para `verNoMapa()` |
+| `- longitude` | Double | novo — necessário para `verNoMapa()` |
+
+| Operação | Retorno | Status |
+| --- | --- | --- |
+| `+ consultarHorarios()` | List\<String\> | separada corretamente da operação de mapa (na V2 as duas operações estavam grudadas em uma única linha, `consultarHorarios()+ VerNoMapa()`, o que não é uma notação UML válida) |
+| `+ verNoMapa()` | void | ação do botão "Ver no mapa"; delega para `GoogleMaps.abrirRota(this)` |
+
+> **Nota:** o botão "Detalhes" da mesma tela não precisou de uma operação nova — ele apenas exibe os atributos já existentes (`nome`, `endereco`, `tipo`), então é coberto pelos getters implícitos da classe.
+
+##### 6. `Conteudo`
+
+| Atributo | Tipo | Status |
+| --- | --- | --- |
+| `- titulo` | String | mantido |
+| `- corpo` | String | mantido |
+| `- dataPublicacao` | Date | mantido |
+| `- curtidas` | int | novo — suporta a operação `curtir()` |
+
+| Operação | Retorno | Status |
+| --- | --- | --- |
+| `+ exibir()` | void | mantido |
+| `+ curtir()` | void | novo — ícone de coração na tela do artigo (`02-artigo-detalhe.png`) |
+| `+ compartilhar()` | void | novo — ícone de compartilhar na mesma tela; complementa (em nível de classe) o `compartilharConteudo(conteudo)` que já existe em `AppMeuSus` |
+
+##### 7. `Categoria`
+
+Estava sem nenhuma operação na V2. Como `Categoria` é o lado "1" da associação classifica-se em com `Conteudo` (lado "\*"), a operação natural de navegação inversa é:
+
+| Operação | Retorno | Justificativa |
+| --- | --- | --- |
+| `+ listarConteudos()` | List\<Conteudo\> | corresponde ao filtro por categoria na tela de listagem de artigos (`01-lista-artigos.png`: Todas, Animais peçonhentos, Atenção e cuidado, Doenças, Doenças contagiosas, Saúde da família...) |
+
+##### 8. `Especialidade`
+
+Mesma situação de `Categoria` — sem operações na V2. Como é o lado "1..\*" da agregação oferece com `UnidadeDeSaude` (lado "1"):
+
+| Operação | Retorno | Justificativa |
+| --- | --- | --- |
+| `+ listarUnidades()` | List\<UnidadeDeSaude\> | permite, a partir de uma especialidade, encontrar quais unidades a oferecem — caminho inverso ao já existente |
+
+##### Tabela-resumo de relacionamentos (V3)
+
+| Origem | Relação | Destino | Tipo UML | Multiplicidade |
+| --- | --- | --- | --- | --- |
+| `PerfilSaude` | possui | `Usuario` | Composição | 1 — 1 |
+| `Usuario` | Acessa | `AppMeuSus` | Associação | — |
+| `ContaGovBr` | Autentica | `AppMeuSus` | Dependência | — |
+| `Conteudo` | É exibido por | `AppMeuSus` | Dependência | — |
+| `AppMeuSus` | Consulta | `UnidadeDeSaude` | Agregação | 1 — \* |
+| `Especialidade` | oferece | `UnidadeDeSaude` | Agregação | 1..\* — 1 |
+| `Conteudo` | classifica-se em | `Categoria` | Associação | \* — 1 |
+| `UnidadeDeSaude` | `verNoMapa()` (abre rota) | `GoogleMaps` | Dependência (novo) | — |
+
+##### Rastreabilidade com as demais entregas da Subequipe 03
+
+- **BPMN — Fluxo Rede de Saúde:** o gateway "Como continuar?" e o ramo "Abrir rota até a unidade no Google Maps" são a origem direta da classe `GoogleMaps` e do método `verNoMapa()`.
+- **Diagrama de Colaboração `FindRedeDeSaude`:** o objeto `:MapService` (mensagem `1.7a: showOnMap(Rede)`) é o equivalente dinâmico da dependência `UnidadeDeSaude` → `GoogleMaps` criada nesta versão.
+- **Diagrama de Colaboração `SearchConteudo`:** os objetos `:ConteudoService` e `:ShareService` (mensagens `1.6a: shareCont(Cont)`) embasam as novas operações `curtir()`/`compartilhar()` em `Conteudo`.
+- **Engenharia Reversa (prints):** telas `01-categorias.png`, `02-maternidade-resultado.png`, `01-lista-artigos.png` e `02-artigo-detalhe.png` foram usadas para validar nomes e tipos de atributos/operações.
 
 ---
 
