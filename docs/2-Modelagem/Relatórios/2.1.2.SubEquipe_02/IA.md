@@ -47,7 +47,8 @@ Ao compilar o código gerado, foi identificado um erro estrutural na diagramaç�
 ![Prompt 2](../assets/subequipe02-modelos/IA/Prompt2.png)
 <center><strong>Legenda:</strong> Figura 4 - Prompt de correção enviado com a imagem do erro.</center>
 
-![Codigo corrigido](../assets/subequipe02-modelos/IA/codigo2.png)
+![Codigo corrigido](../assets/subequipe02-modelos/IA/image.png)
+
 <center><strong>Legenda:</strong> Figura 5 - Código corrigido retornado pela IA.</center>
 
 ![UML corrigido](../assets/subequipe02-modelos/IA/Corrigido.png)
@@ -220,8 +221,8 @@ A utilização da Inteligência Artificial Generativa ao longo da Entrega 2 perm
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Criação do template da documentação de IA Generativa, experimentos e relatos | 17/09/2026 | [8ddaf26](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/8ddaf262b0619515620ef2f029cc1ae973b3626f) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [cbc2910](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/cbc291011901135eddbe798db4fd4650e2530000) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionando minha parte do uso de IA | 17/09/2026 | [cbc2910](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/cbc291011901135eddbe798db4fd4650e2530000) |
 | [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Modificações na estrutura do template e adição do experimento de IA Generativa | 17/09/2026 | [7873814](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7873814259569e3c67ceb28e7448e54588b18ea4) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Licoes Aprendidas | 10/09/2026 | [37c82b9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Licoes Aprendidas | 17/09/2026 | [37c82b9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Victor Leandro](https://github.com/Afrontoso) | Adição do Experimento 03 (Diagrama de Pacotes V1 e Diagrama de Atividades V3), ponto de vista individual e ferramenta empregada | 17/09/2026 | [46113ed](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/46113ed33d814b0c5008f33dd924a705d593605a) |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Commits e Imagens | 10/09/2026 | [37c82b9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Commits e Imagens | 17/09/2026 | [3a6415f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3a6415f535b9141b651bd6ff5c6e17d46f2bb892) |
