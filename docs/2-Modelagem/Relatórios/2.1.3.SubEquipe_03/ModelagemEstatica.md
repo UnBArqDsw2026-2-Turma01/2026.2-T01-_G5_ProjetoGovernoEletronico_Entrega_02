@@ -80,7 +80,9 @@ Oque voce modificou e porque modificou
 
 ## Metodologia
 
-O subgrupo trabalha em rotação: cada integrante fica responsável por uma versão (V1, V2 e V3) do diagrama, sempre refinando a versão anterior do colega. Nesta frente (Modelagem Estática), a rotação é: **Versão 1 — Davi** (elaboração inicial) → **Versão 2 — Gabriel** (refinamento) → **Versão 3 — Yasmim** (fechamento). O tipo de UML (Diagrama de Classes) foi definido em conjunto pelo subgrupo antes do início da V1, pra manter consistência entre as três versões.
+O subgrupo trabalha em rotação: cada integrante fica responsável por uma versão (V1, V2 e V3) do diagrama, sempre refinando a versão anterior do colega. Nesta frente (Modelagem Estática), a rotação é: **Versão 1 — Davi Ursulino** (elaboração inicial) → **Versão 2 — Gabriel Mota** (refinamento) → **Versão 3 — Yasmim Santos** (fechamento). O tipo de UML (Diagrama de Classes) foi definido em conjunto pelo subgrupo antes do início da V1, pra manter consistência entre as três versões.
+
+Além da rotação de autoria, há uma revisão contínua entre os membros: a cada nova versão, os demais integrantes validam a entrega do colega responsável, conferindo se o diagrama está coerente com as versões anteriores e com os artefatos já produzidos (Rich Picture, BPMN, etc.), garantindo um entendimento compartilhado do domínio modelado.
 
 ---
 

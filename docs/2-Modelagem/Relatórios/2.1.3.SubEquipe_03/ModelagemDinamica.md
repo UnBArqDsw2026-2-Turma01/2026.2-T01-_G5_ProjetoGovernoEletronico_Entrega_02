@@ -114,9 +114,9 @@ Oque voce modificou e porque modificou
 
 ## Metodologia
 
-Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , caso tenha alguma particularidade, explicar ela
+A **Versão 1** do Diagrama de Colaboração foi elaborada por [Gabriel Mota](https://github.com/Gabro-MO), cobrindo os fluxos de "Rede de Saúde" e "Conteúdo". As versões seguintes são construídas em cima dessa elaboração inicial, refinando os fluxos já mapeados.
 
-"Seguindo a geral e --extra da subequipe--..."
+Assim como na Modelagem Estática, a validação de cada versão é feita pelos demais integrantes do subgrupo, que revisam a entrega em busca de coerência com os artefatos anteriores (Rich Picture, BPMN e o próprio Diagrama de Classes) e garantem um entendimento compartilhado do comportamento modelado.
 
 ---
 
