@@ -186,4 +186,4 @@ A utilização da Inteligência Artificial Generativa ao longo da Entrega 2 perm
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Criação do template da documentação de IA Generativa, experimentos e relatos | 17/09/2026 | [8ddaf26](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/8ddaf262b0619515620ef2f029cc1ae973b3626f) |
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Modificações na estrutura do template e adição da minha parte da IA Generativa | 17/09/2026 |  |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Modificações na estrutura do template e adição do experimento de IA Generativa | 17/09/2026 | [7873814](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7873814) |
