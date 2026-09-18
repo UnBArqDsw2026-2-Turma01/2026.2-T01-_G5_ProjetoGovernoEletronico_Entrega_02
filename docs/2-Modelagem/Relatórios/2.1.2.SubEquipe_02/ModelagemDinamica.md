@@ -46,6 +46,10 @@ Conforme apresentado nas diretrizes teóricas da Profa. Milene Serrano, os diagr
 ## Desenvolvimento
 
 ### Versão 1
+ 
+| Autor | 
+| :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) |
 
 ![Diagrama de Atividades - Versão 1](../assets/subequipe02-modelos/modelagem-dinamica/V1.png)
 
@@ -70,6 +74,10 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 ---
 
 ### Versão 2
+ 
+| Autor | 
+| :--- |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 
 ![Diagrama de Atividades - Versão 2](../assets/subequipe02-modelos/modelagem-dinamica/modelagem-dinamicaV2.png)
 
@@ -90,6 +98,10 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 * **Padronização Semântica de Ações:** Na UML, blocos de ação representam unidades executáveis de comportamento (expressas por verbos no infinitivo) e não rótulos estáticos de menus ou categorias da interface.
 
 ### Versão 3
+
+| Autor | 
+| :--- |
+| [Victor Leandro](https://github.com/Afrontoso) |
 
 ![Diagrama de Atividades - Versão 3](../assets/subequipe02-modelos/modelagem-dinamica/modelagem-dinamicaV3.png)
 
