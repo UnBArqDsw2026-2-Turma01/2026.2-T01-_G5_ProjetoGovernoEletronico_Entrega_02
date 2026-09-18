@@ -243,3 +243,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 | [Giovani Coelho](https://github.com/Gotc2607) | Relato do uso de IA Generativa e lições aprendidas | 17/09/2026 | [54d3bd9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/54d3bd9db024ebb55333559599d4d9c8306e13ce) |
 | [João Leles](https://github.com/joaoleless) | Relato de uso de IA Generativa | 17/09/2026 | [c4547eb](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c4547eb16406dc3d11a1b329f62436a3a73ef251) |
 | [Nicole Jovita](https://github.com/nicolejovita) | Adição do Experimento 04 (Validação da Modelagem Dinâmica), relato pessoal e lições aprendidas | 18/09/2026 | |
+| [Artur Galdino](https://github.com/ArturFGaldino) | Adição do Experimento 02 (Validação da Modelagem Dinâmica), relato pessoal e lições aprendidas | 18/09/2026 | |
