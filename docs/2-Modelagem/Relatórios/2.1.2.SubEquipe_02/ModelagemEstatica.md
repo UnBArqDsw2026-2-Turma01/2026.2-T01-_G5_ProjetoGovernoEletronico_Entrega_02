@@ -43,7 +43,9 @@ Na taxonomia apresentada em aula, a UML é dividida em diagramas estruturais/est
 
 ### Versão 1
 
-**Autoria:** [Victor Leandro](https://github.com/Afrontoso)
+| Autor | 
+| :--- |
+| [Victor Leandro](https://github.com/Afrontoso) |
 
 ![Diagrama de Pacotes - versão 1](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v1.0.jpg)
 
@@ -96,6 +98,10 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 - O pacote `Comum` agrupa três preocupações de natureza diferente (segurança, privacidade e resiliência). Se ele crescer nas próximas versões, vale avaliar se deve ser quebrado em pacotes irmãos.
 
 ### Versão 2
+ 
+| Autor | 
+| :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) |
 
 ![Imagem Versao 2](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v2.png)
 
@@ -127,6 +133,10 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 
 
 ### Versão 3
+ 
+| Autor | 
+| :--- |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 
 ![Diagrama de Pacotes - Versão 3](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v3.png)
 
@@ -189,6 +199,7 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 | Nome do Membro  | Contribuição   | Data  | Commit |
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
-| [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes e atualização da documentação estática | 17/09/2026 | [7dacf92](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7dacf92) |
+| [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | [39332e5](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/39332e594e1f96ca1ef526ec803d645b8c671ab8) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 do diagrama de Pacotes | 16/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes e atualização da documentação estática | 17/09/2026 | [7dacf92](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7dacf922e081e50483a381efba5a3be3446d354f) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Commits e Imagens | 17/09/2026 | [3a6415f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3a6415f535b9141b651bd6ff5c6e17d46f2bb892) |

@@ -46,6 +46,10 @@ Conforme apresentado nas diretrizes teóricas da Profa. Milene Serrano, os diagr
 ## Desenvolvimento
 
 ### Versão 1
+ 
+| Autor | 
+| :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) |
 
 ![Diagrama de Atividades - Versão 1](../assets/subequipe02-modelos/modelagem-dinamica/V1.png)
 
@@ -70,6 +74,10 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 ---
 
 ### Versão 2
+ 
+| Autor | 
+| :--- |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 
 ![Diagrama de Atividades - Versão 2](../assets/subequipe02-modelos/modelagem-dinamica/modelagem-dinamicaV2.png)
 
@@ -91,19 +99,41 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 
 ### Versão 3
 
-![Imagem Versao 3](../caminho/para/imagem.png)
+| Autor | 
+| :--- |
+| [Victor Leandro](https://github.com/Afrontoso) |
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+![Diagrama de Atividades - Versão 3](../assets/subequipe02-modelos/modelagem-dinamica/modelagem-dinamicaV3.png)
 
-Oque voce modificou e porque modificou
+<center><strong>Legenda:</strong> Figura 4 - Diagrama de Atividades com o fluxo de Agendamentos completo e uso de Forks/Joins</center>
+
+#### O Que Foi Modificado na Estrutura
+
+* **Detalhamento Completo do Fluxo de Agendamentos:** Substituição da nota `Fluxo de Agendamentos a ser completado`, que na Versão 2 sinalizava uma pendência de modelagem, pelo fluxo funcional completo do módulo. O novo trecho contempla a verificação da existência de registros (`Possui agendamentos registrados?`), a exibição da lista segmentada em "Próximos" e "Histórico", o tratamento do estado vazio e a ramificação nas três ações disponíveis ao cidadão:
+    * **Ver detalhes:** seleção do agendamento na lista e exibição de unidade, data, profissional e orientações de preparo.
+    * **Novo agendamento:** seleção de tipo de atendimento e unidade, validação combinada de elegibilidade e disponibilidade, escolha de data e horário, registro com geração de protocolo e confirmação com notificação ao cidadão. O caminho de recusa exibe o motivo e sugere unidade ou data alternativa.
+    * **Cancelar agendamento:** solicitação de cancelamento, confirmação explícita pelo cidadão, liberação do horário na agenda e exibição do comprovante de cancelamento.
+* **Introdução de Nós de Bifurcação e União (*Forks* e *Joins*):** Inclusão de duas barras de sincronização no diagrama, representando comportamentos que ocorrem de forma concorrente:
+    * **Carregamento do Dashboard:** após a validação da sessão, o fluxo se divide em três ações paralelas — `Carregar dados do usuário e Menu lateral`, `Carregar Mini Apps disponíveis` e `Carregar publicações da seção Conteúdo` — que se reagrupam em um *Join* antes de `Renderizar Dashboard completo`.
+    * **Validação de um novo agendamento:** `Consultar horários disponíveis na unidade` e `Validar elegibilidade do cidadão (CNS/CPF)` passam a ser executadas em paralelo, sincronizando-se antes da decisão que autoriza o agendamento.
+
+#### Por Que Essas Modificações Foram Feitas
+
+* **Eliminação de Pendência de Modelagem:** A nota de "fluxo a ser completado" deixava uma das funcionalidades centrais do Meu SUS Digital sem representação comportamental. O detalhamento do módulo de Agendamentos encerra essa lacuna e coloca o fluxo no mesmo nível de profundidade já aplicado ao módulo de Vacinas na Versão 2.
+* **Aderência à Notação Comportamental da UML:** A fundamentação teórica desta página aponta a execução paralela e sincronizada de ações (*Forks* e *Joins*) como um dos recursos semânticos que distinguem o Diagrama de Atividades de um fluxograma tradicional. Até a Versão 2, porém, o artefato não utilizava nenhum desses nós, descrevendo como estritamente sequencial um comportamento que é concorrente. Os dois *Forks* introduzidos alinham o diagrama ao referencial teórico adotado pela subequipe.
+* **Fidelidade ao Comportamento Real da Aplicação:** O carregamento do painel principal e as validações que antecedem um agendamento não dependem uma da outra e são disparadas simultaneamente pela aplicação. Modelá-las em série transmitiria uma noção incorreta de acoplamento e de tempo de resposta entre as etapas.
+* **Cobertura dos Caminhos de Exceção do Novo Fluxo:** As ramificações de estado vazio, de cidadão inelegível ou sem horário disponível e de desistência do cancelamento garantem que o fluxo de Agendamentos represente também os cenários alternativos, e não apenas o caminho de sucesso.
 
 ---
 
 ## Metodologia
 
-Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , caso tenha alguma particularidade, explicar ela
+A Subequipe alinhou-se à metodologia geral estabelecida para o projeto. Para a construção, refinamento e garantia de qualidade dos artefatos de modelagem, adotou-se o seguinte fluxo de trabalho:
 
-"Seguindo a geral e --extra da subequipe--..."
+1. **Alinhamento Geral da Equipe:** Realização de reunião com todo o grupo para discutir a distribuição dos artefatos. Ficou sob responsabilidade do nosso subgrupo a elaboração da Modelagem Dinâmica (**Diagrama de Atividades**) e da Modelagem Estática (**Diagrama de Pacotes**).
+2. **Planejamento e Alinhamento Interno:** Encontro focado do subgrupo para delimitar o escopo, alinhar conceitos arquiteturais e estruturar a divisão das entregas em iterativas de versionamento.
+3. **Elaboração Individual e Evolutiva:** Cada integrante desenvolveu suas próprias versões dos diagramas (V1, V2, etc.), garantindo que todos exercitassem ambas as notações (estática e dinâmica). Essa prática promoveu a divergência positiva de ideias e o refinamento contínuo do artefato final.
+4. **Revisão por Pares e Validação via Pull Requests (PRs):** Para a inclusão de qualquer alteração ou novo versionamento, o integrante responsável abria um *Pull Request* no repositório. A fusão (*merge*) dependia da revisão e validação assíncrona dos demais membros, estabelecendo uma camada adicional de controle de qualidade e consistência técnica.
 
 ---
 
@@ -119,4 +149,6 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 do documento | 16/09/2026 | [49119c4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/49119c4aa83aea0ca96363dbf53056a7dfb382e0) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionar Figma | 16/09/2026 | [c49c2e7](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c49c2e7f338713f2ccf0bebdef2fc262a4eea01d) | 
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 2 do diagrama de atividades | 16/09/2026 | [6cf9cf0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf9cf0) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 2 do diagrama de atividades | 16/09/2026 | [6cf9cf0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf9cf0ae92b83a9b56113a1c4d218094bd8c2da) |
+| [Victor Leandro](https://github.com/Afrontoso) | Versão 3 do diagrama de atividades: fluxo de Agendamentos completo e inclusão de Forks/Joins | 17/09/2026 | [d9ec46d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/d9ec46d42f9148f46df6aacdd9baf00504491a3d) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Commits e Imagens | 17/09/2026 | [3a6415f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3a6415f535b9141b651bd6ff5c6e17d46f2bb892) |
