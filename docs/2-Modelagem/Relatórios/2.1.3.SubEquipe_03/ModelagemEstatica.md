@@ -4,9 +4,18 @@
 
 ## Versão Final
 
-![Versao final da Modelagem Estatica](../caminho/para/imagem.png)
+![Versao final da Modelagem Estatica](../assets/diagrama-de-classes-v3.drawio.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Diagrama de Classes (Versão 3 — Final) do domínio "Meu SUS Digital", elaborado por Yasmim de Souza Santos, consolidando os refinamentos das Versões 1 e 2.</center>
+
+### Leitura do diagrama
+
+- **Classes de domínio** (`Usuario`, `PerfilSaude`, `ContaGovBr`, `UnidadeDeSaude`, `Especialidade`, `Conteudo`, `Categoria`) representam as entidades centrais do "Meu SUS Digital", cada uma com 3 compartimentos (Nome / Atributos / Operações) e visibilidade explícita (`+` público, `-` privado).
+- **`AppMeuSus`** funciona como fachada da aplicação: é por ela que `Usuario` acessa as demais funcionalidades, em vez de se relacionar diretamente com `UnidadeDeSaude` e `Conteudo`.
+- **Serviços externos** (`ContaGovBr` e `GoogleMaps`) ficam fora do domínio persistido pelo sistema — por isso se conectam ao restante do diagrama por **dependência** (seta tracejada), e não por associação/agregação/composição.
+- **Tipos de relacionamento** devem ser lidos pela ponta do losango/seta: losango preenchido junto à classe "todo" indica **composição** (a parte não existe sem o todo, ex. `PerfilSaude` ◆— `Usuario`); losango vazado indica **agregação** (a parte existe independentemente do todo, ex. `Especialidade` ◇— `UnidadeDeSaude`); linha cheia com nome de verbo indica **associação** simples (ex. `Conteudo` — `Categoria`, "classifica-se em"); linha tracejada com seta indica **dependência** (uso pontual, ex. `UnidadeDeSaude` ┄► `GoogleMaps`).
+- **Multiplicidades** nas pontas das linhas (`1`, `1..*`, `*`) indicam quantas instâncias de cada lado participam da relação — por exemplo, `Especialidade` (1..\*) — `UnidadeDeSaude` (1) mostra que uma unidade pode oferecer várias especialidades.
+- Para acompanhar a evolução de cada elemento até chegar a esta versão final, ver o detalhamento "O que foi alterado" na [Versão 3](#versão-3) e nas versões anteriores, na seção Desenvolvimento abaixo.
 
 ---
 
