@@ -157,11 +157,10 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 * **GitHub:** [@GUGOFO](https://github.com/GUGOFO)
 
-* **Uso da IA Generativa (Senso Crítico):** Utilizei o Gemini para converter a especificação textual do fluxo do sistema em código PlantUML e validar a coerência lógica do Diagrama de Atividades V2. A ferramenta funcionou de maneira excelente como um copiloto para aceleração sintática, permitindo estruturar em minutos um diagrama complexo com múltiplas raias e tomadas de decisão. No entanto, o experimento evidenciou as limitações da IA e do PlantUML no quesito de qualidade e acabamento visual. O redesenho manual no Figma foi indispensável para entregar um artefato com padrão profissional.
+* **Uso da IA Generativa (Senso Crítico):** Utilizei o Gemini para converter a especificação textual do fluxo do sistema em código PlantUML e validar a coerência lógica do Diagrama de Atividades. A ferramenta funcionou de maneira excelente como um copiloto para aceleração sintática, permitindo estruturar em minutos um diagrama complexo com múltiplas raias e tomadas de decisão. No entanto, o experimento evidenciou as limitações da IA e do PlantUML no quesito de qualidade e acabamento visual. O redesenho manual no Figma foi indispensável para entregar um artefato com padrão profissional.
 
 * **Lições Aprendidas:**
-  A principal lição foi compreender o papel da IA Generativa como aceleradora de etapas intermediárias e não como uma solução fim a fim. Ela reduz drasticamente o tempo gasto com a sintaxe inicial e a checagem de regras, mas a lapidação final e a garantia de legibilidade dependem exclusivamente do julgamento técnico e do trabalho humano.
-
+  A principal lição foi compreender a importância da clareza notacional e da coesão estrutural na representação visual de sistemas de grande porte. Ao elaborar a **Primeira Versão (V1) do Diagrama de Atividades**, consolidei na prática o mapeamento de fluxos dinâmicos e o uso de partições (*swimlanes*) para delimitar claramente as responsabilidades entre as ações do cidadão e do sistema. Complementarmente, o desenvolvimento da **Segunda Versão (V2) do Diagrama de Pacotes** aprofundou meu entendimento sobre modularização, organização de subsistemas e controle de dependências arquiteturais, garantindo uma visão coerente, escalável e bem delimitada da aplicação.
 ---
 
 ### Victor Leandro
@@ -186,4 +185,6 @@ A utilização da Inteligência Artificial Generativa ao longo da Entrega 2 perm
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Criação do template da documentação de IA Generativa, experimentos e relatos | 17/09/2026 | [8ddaf26](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/8ddaf262b0619515620ef2f029cc1ae973b3626f) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [cbc2910](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/cbc291011901135eddbe798db4fd4650e2530000) |
 | [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Modificações na estrutura do template e adição do experimento de IA Generativa | 17/09/2026 | [7873814](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7873814) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Licoes Aprendidas | 10/09/2026 | [37c82b9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
