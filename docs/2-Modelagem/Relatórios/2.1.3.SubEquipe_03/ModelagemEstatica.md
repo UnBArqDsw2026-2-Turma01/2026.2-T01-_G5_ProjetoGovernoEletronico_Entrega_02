@@ -4,7 +4,7 @@
 
 ## Versão Final
 
-![Versao final da Modelagem Estatica](../assets/diagrama-de-classes-v3.drawio.png)
+![Imagem Versao 3](../assets/subequipe03-modelagem/Estatica/diagrama-de-classes-v3.drawio.png)
 
 <center><strong>Legenda:</strong> Diagrama de Classes (Versão 3 — Final) do domínio "Meu SUS Digital", elaborado por Yasmim de Souza Santos, consolidando os refinamentos das Versões 1 e 2.</center>
 
