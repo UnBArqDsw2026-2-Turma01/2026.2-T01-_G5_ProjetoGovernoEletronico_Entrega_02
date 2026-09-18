@@ -33,11 +33,20 @@ Verificar se uma IA generativa (Claude Sonnet 3.5) é capaz de produzir um **Dia
 
 #### Resultado Obtido: 
 
+<div align="center">
+
 ![Resultado](../assets/subequipe01-modelos/modelagem-estatica/exp_modelagem-estatica.png)
+
+</div>
+
 
 <center><strong>Legenda:</strong> Diagrama de Pacotes gerado pela IA a partir da Rich Picture, BPMN e SIG do MeuSUS Digital</center>
 
+<div align="center">
+
 ![Prompt](../assets/subequipe01-modelos/modelagem-estatica/prompt-exp_modelagem-estatica.png)
+
+</div>
 
 <center><strong>Legenda:</strong> Prompt fornecido à IA com os três artefatos visuais anexados (Rich Picture, BPMN e SIG)</center>
 
@@ -63,15 +72,38 @@ A comparação entre o resultado gerado pela IA e a **Versão 1.0** do diagrama 
 ### Experimento 02: Modelagem Estática — Validação Final (Diagrama de Pacotes V1.3)
 
 #### Objetivo: 
-Submeter a **Versão 1.3 Final do Diagrama de Pacotes** (de autoria de [Nicole Jovita](https://github.com/nicolejovita)) para auditoria automática por uma IA Generativa (Gemini/Claude). O objetivo foi testar a capacidade da IA em atuar como um *reviewer* arquitetural, auditando a conformidade com a UML 2.0, o desacoplamento de pacotes, a consistência dos estereótipos `<<import>>` vs `<<use>>` e a aderência aos requisitos do NFR Framework.
+Submeter a **Versão 1.3 Final do Diagrama de Pacotes** (de autoria de [Nicole Jovita](https://github.com/nicolejovita)) para auditoria automática por uma IA Generativa (Gemini). O objetivo foi testar a capacidade da IA em atuar como um *reviewer* arquitetural, auditando a conformidade com a UML 2.0.
 
 #### Resultado Obtido e Prompt: 
-*[INSERIR PRINT DO PROMPT DE VALIDAÇÃO E DA RESPOSTA DA IA]*
+<div align="center">
+
+![Prompt](../assets/subequipe01-modelos/modelagem-estatica/prompt-exp_modelagem-estatica-final.png)
+
+</div>
 
 <center><strong>Legenda:</strong> Prompt de auditoria arquitetural fornecido à IA com a imagem da Versão 1.3 do Diagrama de Pacotes</center>
 
+<div align="center">
+
+![Resultado](../assets/subequipe01-modelos/modelagem-estatica/exp_modelagem-estatica-final.png)
+
+</div>
+
+
+<center><strong>Legenda:</strong> Resposta gerada pela IA a partir da Versão 1.3 do Diagrama de Pacotes</center>
+
 #### Análise Crítica e Intervenção Humana: 
-1. **Ponto:** Lorem ipsum
+1. Redundâncias e Pontos Já Consolidados
+
+* **Avaliação prévia correta:** Parte dos pontos de atenção levantados inicialmente já estava estruturalmente correta no diagrama original. Aspectos como a organização em camadas (`Presentation`, `Business`/`HealthServices`, `DataPersistence`) e o uso adequado de estereótipos UML (`<<use>>` e `<<import>>`) não precisavam de intervenção corretiva, pois já seguiam as boas práticas de arquitetura e modelagem.
+
+2. Destaque Positivo: Verificação de Veracidade da Iteração
+
+* **Validação rigorosa:** Um ponto de forte destaque na análise foi a recomendação de conferir a veracidade da relação entre as camadas (especialmente a direção das setas entre `DataPersistence` e `HealthServices`, ou `Presentation` e `Authentication`). Essa postura crítica de inspecionar a ponta exata das setas no arquivo original é excelente, garantindo que o acoplamento e o fluxo de dependência respeitem de fato as regras arquiteturais (onde o domínio/serviço orquestra ou utiliza a persistência, e não o inverso).
+
+3. Correção de Escopo: Ausência de Poluição Visual
+
+* **Ajuste na legibilidade:** Diferente do que foi sugerido de forma genérica na primeira avaliação, o diagrama **não apresenta** poluição visual nem cruzamento excessivo de linhas. A disposição espacial dos blocos está limpa, organizada e com um fluxo de leitura direto e compreensível, não sendo necessária nenhuma reorganização estrutural ou espacial dos pacotes por motivos de legibilidade.
 
 ---
 
@@ -81,7 +113,13 @@ Submeter a **Versão 1.3 Final do Diagrama de Pacotes** (de autoria de [Nicole J
 Verificar se a IA generativa Gemini (Google - Advanced / 1.5 Pro) é capaz de produzir um **Diagrama de Colaboração (Comunicação) UML** coerente com as regras de negócio do aplicativo **MeuSUS Digital**, a partir de instruções textuais e de contexto. O resultado gerado pela IA foi comparado com as **Versões 1.1 e 1.2** do diagrama construído pela subequipe (com participação de [Giovani Coelho](https://github.com/Gotc2607) e [João Leles](https://github.com/joaoleless)).
 
 #### Resultado Obtido: 
+
+<div align="center">
+
 ![Resultado](../assets/subequipe01-modelos/modelagem-dinamica/Versão1-DiagramaColaboracao-IA.jpeg)
+
+</div>
+
 
 <center><strong>Legenda:</strong> Diagrama de Colaboração gerado pela IA Gemini com base no contexto textual</center>
 
