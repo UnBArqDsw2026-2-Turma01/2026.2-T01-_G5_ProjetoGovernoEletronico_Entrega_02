@@ -60,11 +60,12 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 ### Versão 1.1
 
 **Autoria:** [Giovani Coelho](https://github.com/Gotc2607)
-![Imagem Versao 1.1](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.1.png)
+![Imagem Versao 1.1](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.1.jpg)
 
 <center><strong>Legenda:</strong> Evolução do Diagrama de Pacotes com adição das camadas de Domínio (HealthServices) e Persistência de Dados.</center>
 
 **O Que Foi Modificado na Estrutura**
+
 * **Refinamento do pacote Presentation:** Adicionamos o subpacote StateManagement atuando como intermediário obrigatório dentro da camada de apresentação.
 * **Criação do pacote HealthServices (Domínio):** Inserimos este novo pacote central para abrigar as regras de negócio, contendo os submódulos Appointments, Vaccination e MedicalRecords.
 * **Criação do pacote DataPersistence:** Adicionamos este pacote voltado ao armazenamento local de dados, contendo os submódulos CacheManager e LocalDatabase.
@@ -73,6 +74,7 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 * **Exclusão consciente de escopo:** Optamos por não incluir o NotificationService nesta iteração específica, mantendo o diagrama focado exclusivamente na resolução do fluxo principal de dados e estado offline.
 
 **Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)**
+
 * **Isolamento de Responsabilidades na UI:** A introdução do StateManagement garante que as telas (Screens) sejam componentes puramente visuais, transferindo toda a responsabilidade de acionar casos de uso e controlar a navegação para um gerenciador de estado dedicado.
 * **Adoção de Arquitetura Centrada no Domínio:** A criação do HealthServices coloca as regras de negócio do aplicativo governamental no centro do sistema, evitando que a lógica principal fique espalhada pelas telas ou misturada com a infraestrutura de rede.
 * **Atendimento a Requisitos Não Funcionais (Disponibilidade Offline):** O pacote DataPersistence foi adicionado para suprir a necessidade crítica de um aplicativo de saúde pública: garantir que o cidadão possa acessar sua carteira de vacinação e agendamentos mesmo sem conexão à internet.
@@ -82,9 +84,9 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 ### Versão 1.2
 
 **Autoria:** [João Leles](https://github.com/joaoleless)
-![Imagem Versao 3](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.2.png)
+![Imagem Versao 3](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.2.jpg)
 
-**Legenda:** Correção de inconsistências estruturais e introdução da camada de Notificações
+<center><strong>Legenda:</strong> Correção de inconsistências estruturais e introdução da camada de Notificações</center>
 
 **O Que Foi Modificado na Estrutura**
 
@@ -104,11 +106,28 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 ### Versão 1.3
 
 **Autoria:** [Nicole Jovita](https://github.com/nicolejovita)
-![Imagem Versao 4](../caminho/para/imagem.png)
+![Imagem Versão 1.3](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.3.jpg)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Diagrama de Pacotes Refinado (Enquadramento UML 2.0, Semântica de Importação e Segurança Avançada)</center>
 
-O que voce modificou e por que modificou
+**O Que Foi Modificado na Estrutura**
+
+* **Enquadramento com Moldura (*Diagram Frame*):** Enquadramento de todo o diagrama dentro de uma moldura retangular com o cabeçalho (*Frame Heading*) no canto superior esquerdo identificando o tipo de artefato (`pkg`) e o namespace do sistema (`MeuSUSDigital::ArquiteturaEmCamadas`).
+* **Reorganização do Layout Espacial (Eliminação de Cruzamentos):** Reposicionamento dos pacotes lógicos no canvas para eliminar o cruzamento de linhas de dependência e importação. O pacote `HealthServices` foi trazido para o centro visual, mantendo a camada de infraestrutura e persistência (`DataPersistence`) centralizada na base e o pacote de notificação (`Notification`) na extremidade direita.
+* **Refinamento Semântico dos Estereótipos (`<<import>>` e `<<use>>`):** Substituição do estereótipo genérico `<<use>>` por **`<<import>>`** nas conexões de `HealthServices` com `HealthIntegration` e de `HealthServices` com `DataPersistence`. O estereótipo `<<use>>` foi mantido para o consumo operacional de serviços.
+* **Aprimoramento do Pacote `SecurityAndCompliance`:** Adição do subpacote **`CryptoEngine`** para encapsular a lógica de criptografia e funções de dispersão (hash).
+* **Evolução do Pacote `HealthIntegration`:** Inclusão do subpacote **`mTLSHandler`** para gestão de certificados digitais e canais de transmissão seguros.
+* **Padronização de Nomenclatura na Persistência:** Renomeação do subpacote interno `Vaccination` no pacote `DataPersistence` para **`VaccineRepository`**, garantindo clareza e eliminando ambiguidades de nome com a camada de serviços.
+
+---
+
+**Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)**
+
+* **Conformidade com a UML 2.0:** A adição da moldura retangular (*Diagram Frame*) delimita formalmente o escopo da modelagem estática, garantindo rigor sintático equivalente ao utilizado nos diagramas dinâmicos do projeto.
+* **Clareza Visual e Legibilidade do Grafo de Pacotes:** A disposição do layout sem setas cruzadas reduz a poluição visual, facilitando o rastreamento intuitivo do fluxo de dependências desde as camadas de apresentação e borda até os serviços centrais e o banco local.
+* **Precisão Arquitetural na Importação de Tipos:** A alteração para `<<import>>` reflete com precisão que a camada de domínio (`HealthServices`) precisa importar e expor os tipos, interfaces e DTOs clínicos no padrão HL7 FHIR (definidos em `HealthIntegration`), além das entidades do banco local (`DataPersistence`), diferentemente do simples acionamento de serviços externos representado por `<<use>>`.
+* **Alinhamento com o NFR SIG e Requisitos de Segurança:** A criação dos subpacotes `CryptoEngine` e `mTLSHandler` oferece respaldo arquitetural direto aos requisitos não funcionais mapeados no NFR Framework e no BPMN, contemplando a criptografia de dados em repouso (AES-256), a geração de logs imutáveis com Hash SHA-256 e a autenticação mútua via mTLS para comunicação com a RNDS.
+* **Clareza de Responsabilidades e Desacoplamento:** A renomeação para `VaccineRepository` explicita que o módulo trata estritamente da camada de persistência local/sincronização de dados, evitando duplicidade de nomes com as regras de negócio de vacinação presentes no pacote superior.
 
 ---
 
@@ -123,7 +142,6 @@ INSERIR METODOLOGIA.
 1. SERRANO, Milene. [Arquitetura e Desenho de Software - Aula Modelagem UML Estática](https://drive.google.com/file/d/17TPUNv5Pllzhx23HIpZ0aJnU9hAJ9Ln9/view). Brasília: UnB Gama, 2026. 1 arquivo PDF.
 2. UML Diagrams. UML Package Diagrams Overview. Disponível em: https://www.uml-diagrams.org/package-diagrams-overview.html. Acesso em: 15 set. 2026.
 3. UML Diagrams. Unified Modeling Language (UML) Diagrams. Disponível em: https://www.uml-diagrams.org/. Acesso em: 15 set. 2026.
-4. KDESDK. UML Basics. Disponível em: https://docs.kde.org/trunk4/pt_BR/kdesdk/umbrello/uml-basics.html. Acesso em: 15 set. 2026.
 
 ---
 
@@ -135,3 +153,4 @@ INSERIR METODOLOGIA.
 | [Artur Galdino](https://github.com/ArturFGaldino) | Estruturação inicial do artefato de modelagem estática de pacotes e definição dos módulos | 15/09/2026 | [74546bc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/74546bc3f8c51bdd738df156dbc65de0edcfceac) |
 | [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.1 da modelagem estática de pacotes (adição de Domínio e Persistência) | 16/09/2026 | [6cf3912](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf3912) |
 | [João Leles](https://github.com/joaoleless) | Elaboração da Versão 1.2 da modelagem estática de pacotes | 16/09/2026 | [50b64b6](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/50b64b600b5cba1e34f46c0d18ec2d21c6a4a204) |
+| [Nicole Jovita](https://github.com/nicolejovita) | Elaboração da Versão 1.3 da modelagem estática de pacotes | 17/09/2026 | |
