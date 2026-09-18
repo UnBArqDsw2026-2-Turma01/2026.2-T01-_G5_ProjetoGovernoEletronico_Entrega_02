@@ -22,19 +22,27 @@
 
 ## Fundamentação Teorica
 
-### O que é o Diagrama de Colaborações
+### O que é um diagrama dinâmico?
 
-O **Diagrama de Colaboração** (denominado **Diagrama de Comunicação** a partir da especificação UML 2.0) é um artefato da **modelagem dinâmica** da UML (_Unified Modeling Language_). Ele é utilizado para demonstrar a interação comportamental entre objetos ou partes do sistema por meio de mensagens sequenciais organizadas em torno de uma estrutura gráfica de enlaces.
+Diagramas dinâmicos (também chamados de comportamentais) são os diagramas da UML que mostram a natureza dinâmica dos objetos de um sistema, descrita como uma série de mudanças que ocorrem no sistema com o passar do tempo. Ao contrário dos diagramas estáticos/estruturais — que retratam apenas a estrutura de classes, objetos e seus relacionamentos, sem noção de tempo —, os diagramas dinâmicos enfatizam o comportamento e a interação entre os elementos do sistema, revelando como os objetos colaboram, trocam mensagens e mudam de estado para realizar uma funcionalidade.
 
-Conforme apresentado nas diretrizes teóricas da Profa. Milene Serrano, os diagramas dinâmicos da UML buscam revelar a dimensão comportamental da solução computacional. Diferentemente do Diagrama de Sequência, que prioriza a ordenação estritamente temporal disposta ao longo de linhas de vida verticais, o Diagrama de Colaboração destaca a **organização e o relacionamento estrutural entre os objetos** que participam da interação, dando ênfase no caminho pelo qual as mensagens trafegam durante determinado cenário de uso.
+### Para que serve?
+
+O diagrama dinâmico serve para descrever como os objetos das classes definidas na Modelagem Estática colaboram entre si para realizar um comportamento ou cenário de uso específico do sistema — mostrando a ordem e/ou a estrutura das mensagens trocadas entre eles. No caso desta subequipe, o Diagrama de Colaboração complementa o Diagrama de Classes (Modelagem Estática): ele evidencia como os objetos (`:Cidadao`, `:Meu SUS Digital`, `:RedeService`, `:ConteudoService`, etc.) interagem para realizar os fluxos "Rede de Saúde" e "Conteúdo", já mapeados na Rich Picture e no BPMN da Entrega 1.
+
+### O que é um diagrama de colaboração?
+
+O **Diagrama de Colaboração** (denominado **Diagrama de Comunicação** a partir da especificação UML 2.0) é um dos diagramas dinâmicos da UML (_Unified Modeling Language_), utilizado para demonstrar a interação comportamental entre objetos ou partes do sistema por meio de mensagens sequenciais organizadas em torno de uma estrutura gráfica de enlaces — funcionando, na prática, como um diagrama de objetos ao qual se somam as mensagens trocadas entre eles.
+
+Conforme apresentado nas diretrizes teóricas da Profa. Milene Serrano, os diagramas dinâmicos da UML buscam revelar a dimensão comportamental da solução computacional. Diferentemente do Diagrama de Sequência, que prioriza a ordenação estritamente temporal disposta ao longo de linhas de vida verticais, o Diagrama de Colaboração destaca a **organização e o relacionamento estrutural entre os objetos** que participam da interação, dando ênfase no caminho pelo qual as mensagens trafegam durante determinado cenário de uso — sendo, por isso, a escolha mais adequada quando o foco está no contexto/estrutura do sistema, e não apenas na cronologia das chamadas.
 
 A fundamentação conceitual do Diagrama de Colaboração na UML resgata as contribuições históricas de **Grady Booch**, um dos criadores da notação ao lado de James Rumbaugh (OMT) e Ivar Jacobson (OOSE).
 
-### Principais Elementos e Regras da Notação UML
+### Simbologias do diagrama de colaboração
 
-- **Atores e Objetos (_Lifelines_):** Representam os papéis e as instâncias de classes envolvidas no fluxo (ex.: `: Usuário` (Desenho da pessoa), `: Meu SUS Digital`).
-- **Enlaces de Comunicação (_Links_):** Linhas sólidas ligando os objetos para indicar a existência de um canal de comunicação estrutural por onde as mensagens transitam.
-- **Setas de Mensagem e Sentido de Disparo:** Setas paralelas aos enlaces que indicam a direção da chamada de método.
+- **Atores e Objetos (_Lifelines_):** Representam os papéis e as instâncias de classes envolvidas no fluxo, escritos com o nome sublinhado e precedido de dois-pontos (ex.: `: Usuário`, `: Meu SUS Digital`).
+- **Enlaces de Comunicação (_Links_):** Linhas sólidas ligando os objetos para indicar a existência de um canal de comunicação estrutural por onde as mensagens transitam — equivalentes aos relacionamentos de um diagrama de objetos.
+- **Setas de Mensagem e Sentido de Disparo:** Setas paralelas aos enlaces que indicam a direção da chamada de método, com o nome da mensagem e, quando necessário, seus parâmetros e tipo de retorno (ex.: `Enviar(Tipo m): Void`).
 - **Numeração de Sequência Cronológica:** Identificadores numéricos que estabelecem a ordem temporal do fluxo (ex.: `1`, `1.1`, `2.2.1`). A notação decimal aninhada expressa sub-operações ou chamadas derivadas disparadas a partir de um método pai.
 - **Expressões de Guarda (`[condição]`):** Regras condicionais entre colchetes que delimitam o disparo da mensagem mediante validação de contexto (ex.: `[tokensValidos]`, `[termoPendente]`).
 - **Iteração (`*`):** Símbolo de asterisco associado à sequência para indicar execuções repetitivas em laço.
@@ -114,13 +122,11 @@ Oque voce modificou e porque modificou
 
 ## Metodologia
 
-Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , caso tenha alguma particularidade, explicar ela
+A **Versão 1** do Diagrama de Colaboração foi elaborada por [Gabriel Mota](https://github.com/Gabro-MO), cobrindo os fluxos de "Rede de Saúde" e "Conteúdo". As versões seguintes são construídas em cima dessa elaboração inicial, refinando os fluxos já mapeados.
 
-"Seguindo a geral e --extra da subequipe--..."
+Assim como na Modelagem Estática, a validação de cada versão é feita pelos demais integrantes do subgrupo, que revisam a entrega em busca de coerência com os artefatos anteriores (Rich Picture, BPMN e o próprio Diagrama de Classes) e garantem um entendimento compartilhado do comportamento modelado.
 
 ---
-
-### Embasamento teórico para criação:
 
 ### Embasamento teórico para criação:
 
@@ -128,10 +134,13 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 2. UML Diagrams. Communication Diagrams Overview. Disponível em: https://www.uml-diagrams.org/communication-diagrams.html. Acesso em: 15 set. 2026.
 3. UML Diagrams. Unified Modeling Language (UML) Diagrams. Disponível em: https://www.uml-diagrams.org/. Acesso em: 15 set. 2026.
 4. KDESDK. UML Basics. Disponível em: https://docs.kde.org/trunk4/pt_BR/kdesdk/umbrello/uml-basics.html. Acesso em: 15 set. 2026.
+5. BARCELAR, Ricardo Rodrigues. Engenharia de Software - Módulo 3: Modelagem de Sistemas Orientada a Objetos com UML. Disponível em: http://www.ricardobarcelar.com.br. Acesso em: 17 set. 2026.
+6. UML — UNIFIED MODELING LANGUAGE. Linguagem de Modelagem Unificada em Português. Apostila de referência sobre a UML (introdução, modelos de elementos e diagramas). [S.l.: s.n.], [s.d.].
 
 ---
 
-| Nome do Membro                                  | Contribuição                                                 | Data       | Commit                                                                                                                                                   |
-| ----------------------------------------------- | ------------------------------------------------------------ | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio                                       | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
-| [Gabriel Mota](https://github.com/Gabro-MO)     | Adição da versão 1 do Diagrama dinamico e embasamento teorioco | 16/09/2026 | [efb53b8](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efb53b8ab446160420be28ffaab127cf49900b14) |
+| Nome do Membro                                        | Contribuição                                                                                                                    | Data       | Commit                                                                                                                                                    |
+| ------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO)       | Criação do Repositorio                                                                                                          | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
+| [Gabriel Mota](https://github.com/Gabro-MO)           | Adição da Versão 1 do Diagrama de Colaboração (fluxos "Rede de Saúde" e "Conteúdo") e do embasamento teórico inicial            | 16/09/2026 | [efb53b8](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efb53b8ab446160420be28ffaab127cf49900b14) |
+| [Yasmim de Souza Santos](https://github.com/eii-yahs) | Detalhamento da metodologia de trabalho da subequipe (rotação de versões e revisão contínua entre os membros)                   | 17/09/2026 | [37e0f46](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/37e0f46438bba1ecf427a8d69b12afda091c7fca) |
