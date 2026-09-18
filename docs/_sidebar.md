@@ -42,6 +42,7 @@
             - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub2/Ata-15-09.md)
         - [Atas SubEquipe 3](./Atas/Entrega2/AtasSub3/README.md)
             - [Ata - 15 de Setembro](./Atas/Entrega2/AtasSub3/Ata-15-09.md)
+            - [Ata - 17 de Setembro](./Atas/Entrega2/AtasSub3/Ata-17-09.md)
     - [Modelo de Ata](./Atas/Atas-Modelo.md)
 
 - **1. Desenho de Software (Base)**
