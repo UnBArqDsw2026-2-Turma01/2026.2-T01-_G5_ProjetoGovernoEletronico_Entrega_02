@@ -43,7 +43,9 @@ Na taxonomia apresentada em aula, a UML é dividida em diagramas estruturais/est
 
 ### Versão 1
 
-**Autoria:** [Victor Leandro](https://github.com/Afrontoso)
+| Autor | 
+| :--- |
+| [Victor Leandro](https://github.com/Afrontoso) |
 
 ![Diagrama de Pacotes - versão 1](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v1.0.jpg)
 
@@ -96,6 +98,10 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 - O pacote `Comum` agrupa três preocupações de natureza diferente (segurança, privacidade e resiliência). Se ele crescer nas próximas versões, vale avaliar se deve ser quebrado em pacotes irmãos.
 
 ### Versão 2
+ 
+| Autor | 
+| :--- |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) |
 
 ![Imagem Versao 2](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v2.png)
 
@@ -127,6 +133,10 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 
 
 ### Versão 3
+ 
+| Autor | 
+| :--- |
+| [Ana Beatriz](https://github.com/AnnaBeatrizAraujo) |
 
 ![Diagrama de Pacotes - Versão 3](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v3.png)
 
