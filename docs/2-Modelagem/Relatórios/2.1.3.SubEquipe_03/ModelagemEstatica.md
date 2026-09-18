@@ -29,6 +29,33 @@
 
 ---
 
+## Fundamentação Teórica
+
+### O que é um diagrama estático?
+
+Diagramas estáticos (também chamados de estruturais) são os diagramas da UML que retratam a estrutura do sistema e de suas partes em diferentes níveis de abstração, bem como a forma como elas estão relacionadas entre si. Ao contrário dos diagramas dinâmicos/comportamentais, eles não utilizam conceitos relacionados ao tempo e não mostram detalhes de comportamento — funcionam como uma "fotografia" da organização do sistema (classes, objetos, pacotes, componentes), sem descrever a ordem ou o fluxo de mensagens entre eles.
+
+### Para que serve?
+
+O diagrama estático serve para representar a modelagem estática do domínio de um sistema: quais entidades (classes) ele gerencia, seus atributos e operações, e como essas entidades se relacionam entre si (por associação, agregação, composição, generalização, dependência ou realização). Essa estrutura é a base sobre a qual, depois, a modelagem dinâmica descreve como os objetos colaboram e trocam mensagens para realizar os casos de uso do sistema — no caso desta subequipe, essa continuidade pode ser vista na comparação entre este Diagrama de Classes e o Diagrama de Colaboração produzido na Modelagem Dinâmica.
+
+### O que é um diagrama de classes?
+
+O Diagrama de Classes é o diagrama estático da UML mais utilizado, reunindo os elementos mais importantes de um sistema orientado a objetos: um conjunto de classes, interfaces e os relacionamentos entre elas. Cada classe especifica tanto as propriedades (atributos) quanto os comportamentos (operações/métodos) dos objetos que dela derivam, sendo representada por um retângulo dividido em três compartimentos — **Nome**, **Atributos** e **Operações**.
+
+### Simbologias do diagrama de classes
+
+- **Compartimentos da classe:** nome da classe (topo), atributos (meio) e operações/métodos (base).
+- **Visibilidade:** `+` público (visível por qualquer classe), `-` privado (visível apenas pela própria classe), `#` protegido (visível pela classe e suas subclasses) e `~` pacote (visível apenas dentro do mesmo pacote).
+- **Associação:** linha sólida simples entre duas classes, indicando que seus objetos se conhecem/interagem; pode ter nome (geralmente um verbo) e multiplicidade em cada extremidade.
+- **Agregação:** linha com losango vazado do lado do "todo"; representa uma relação "tem", em que a parte pode existir independentemente do todo (ex.: `Especialidade` ◇— `UnidadeDeSaude`).
+- **Composição:** linha com losango preenchido do lado do "todo"; representa uma relação "contém"/"é composto de", em que a parte não existe sem o todo e é destruída junto com ele (ex.: `PerfilSaude` ◆— `Usuario`).
+- **Generalização (herança):** linha com seta de ponta vazada (triangular) apontando para a superclasse; representa a relação "é um tipo de", em que a subclasse herda atributos e operações.
+- **Dependência:** linha tracejada com seta aberta; indica que uma mudança em um elemento pode afetar o outro (uso pontual, sem relação de posse), como no caso de `UnidadeDeSaude` que depende do serviço externo `GoogleMaps`.
+- **Realização:** linha tracejada com seta de ponta vazada (triangular); usada entre uma classe e uma interface que ela implementa.
+- **Multiplicidade:** números ou intervalos nas extremidades das linhas (`1`, `0..1`, `1..*`, `*`, etc.) indicando quantos objetos de cada lado participam da relação.
+- **Classe abstrata:** representada com o nome em itálico ou com o estereótipo `<<abstract>>`, indicando que não gera instâncias diretas — diferente das classes concretas.
+
 ---
 
 ## Desenvolvimento
@@ -218,6 +245,9 @@ Além da rotação de autoria, há uma revisão contínua entre os membros: a ca
 
 1. A notação segue o Diagrama de Classes da UML (Unified Modeling Language), conforme material da disciplina (Profa. Milene Serrano) e a documentação de referência [uml-diagrams.org](https://www.uml-diagrams.org/class-diagrams-overview.html): cada classe é representada em 3 compartimentos (Nome, Atributos, Operações), com visibilidade `+` (público), `-` (privado) e `#` (protegido).
 2. Os relacionamentos seguem semânticas distintas, e não uma associação genérica: **associação** (uso simples, verbo no meio da linha), **agregação** (losango vazado, relação "tem", parte sobrevive sem o todo) e **composição** (losango preenchido, relação "contém"/"é composto de", parte não existe sem o todo), conforme Booch, Rumbaugh & Jacobson (criadores da UML).
+3. SERRANO, Milene. [Arquitetura e Desenho de Software - Aula Modelagem UML Estática](https://drive.google.com/file/d/17TPUNv5Pllzhx23HIpZ0aJnU9hAJ9Ln9/view). Brasília: UnB Gama, 2026. 1 arquivo PDF.
+4. BARCELAR, Ricardo Rodrigues. Engenharia de Software - Módulo 3: Modelagem de Sistemas Orientada a Objetos com UML. Disponível em: http://www.ricardobarcelar.com.br. Acesso em: 17 set. 2026.
+5. UML — UNIFIED MODELING LANGUAGE. Linguagem de Modelagem Unificada em Português. Apostila de referência sobre a UML (introdução, modelos de elementos e diagramas). [S.l.: s.n.], [s.d.].
 
 ---
 
