@@ -16,6 +16,7 @@ A coleta de depoimentos e dados de uso ocorreu de forma **assíncrona e individu
 * **Gemini:** Utilizado para processar o fluxo detalhado em texto e converter as regras de negócio em código estruturado para a geração automática do diagrama no PlantUML, além de auxiliar na validação lógica e sintática do modelo.
 * **NotebookLM:** Utilizado para auditar as imagens dos diagramas no Figma com base na bibliografia da disciplina.
 * **PlantUML:** Ferramenta *open-source* baseada em código estruturado (sintaxe declarativa) para renderização automática de diagramas UML.
+* **Claude Code:** Agente de IA executado em terminal, com acesso ao repositório local. Empregado para converter o BPMN da subequipe em uma proposta de estrutura de pacotes em camadas e para escrever utilitários de verificação automatizada do layout produzido.
 
 ---
 
@@ -116,17 +117,68 @@ Avaliando o relatório da IA, refatorei a modelagem no Figma substituindo um pac
 
 ---
 
-### Experimento 03: Diagramas de Pacotes V1 e Atividades V1
+### Experimento 03: Diagramas de Pacotes V1 e Atividades V3
 **Responsável:** Victor Leandro
 
 #### Objetivo
-[Preenchimento futuro: Descreva a aplicação da IA na elaboração e validação da primeira versão do Diagrama de Pacotes e/ou do Diagrama de Atividades.]
+Avaliar o uso do **Claude Code** — agente de IA executado em terminal, com acesso aos artefatos do repositório — nas duas frentes sob minha responsabilidade: a **Versão 1 do Diagrama de Pacotes** (modelagem estática) e a **Versão 3 do Diagrama de Atividades** (modelagem dinâmica).
 
-#### Resultado Obtido e Iterações
-*(Adicione os prints e iterações)*
+O experimento é relevante porque a IAG foi empregada em **dois papéis distintos** nas duas frentes, o que permite comparar até onde vale delegar:
 
-#### Análise Crítica e Intervenção Humana
-[Preenchimento futuro: Análise crítica sobre as respostas e intervenções manuais aplicadas.]
+* Na **V1 do Pacotes**, a IA atuou como **tradutora conceitual**: converteu os artefatos anteriores da subequipe em uma proposta de estrutura arquitetural, e o diagrama foi desenhado por mim a partir dela.
+* Na **V3 das Atividades**, a IA atuou como **autora do artefato**: gerou o arquivo-fonte do draw.io (`.drawio`, XML mxGraph) e os utilitários para verificar o próprio resultado.
+
+A hipótese testada na segunda frente era: se o diagrama nasce como **código estruturado e versionável**, então ele pode ser **verificado programaticamente** — checando sobreposição de caixas, arestas atravessando blocos e nós desconectados — algo impossível de automatizar quando o diagrama é desenhado manualmente no Figma.
+
+---
+
+#### Parte 1: Diagrama de Pacotes V1 (Modelagem Estática)
+
+##### Metodologia
+
+Nesta frente utilizei a IAG exclusivamente na etapa de **tradução conceitual entre artefatos**. O ponto de partida era o BPMN produzido pela subequipe na Entrega 1, que descrevia o sistema em termos de **fluxo** — piscinas, gateways, eventos de mensagem e depósitos de dados. O Diagrama de Pacotes, porém, exige o sistema descrito em termos de **estrutura**: responsabilidades alocadas em módulos.
+
+Submeti os artefatos anteriores ao Claude Code e pedi a conversão de um registro para o outro. O modelo propôs o agrupamento das responsabilidades observadas no fluxo em uma **arquitetura em camadas** — Apresentação, Aplicação, Domínio e Integração —, mais um pacote transversal para as preocupações que o SIG e o Rich Picture destacavam (segurança, privacidade e tratamento de falhas), e a manutenção de `gov.br` e `RNDS` como sistemas externos fora da fronteira.
+
+##### Análise Crítica e Intervenção Humana
+
+**O que a IA entregou.** O valor da IAG aqui foi de **natureza conceitual, não gráfica**: ela ajudou a enxergar que serviços aparentemente distintos no BPMN (vacinas, exames, agendamentos) percorriam o mesmo caminho — autenticar, consultar a RNDS, exibir, opcionalmente gerar comprovante — e que, por isso, organizar os pacotes por funcionalidade duplicaria essa estrutura três ou quatro vezes, enquanto camadas a representariam uma única vez.
+
+**O que eu fiz.** O diagrama em si foi **construído manualmente por mim** a partir dessa proposta. A IA não produziu o artefato final nesta frente: ela produziu o raciocínio de agrupamento, e a modelagem — posicionamento dos pacotes, traçado e sentido das dependências, aplicação dos estereótipos `«camada»`, `«use»` e `«sistema externo»`, e delimitação da fronteira do sistema — foi feita no editor de diagramas por decisão própria.
+
+**Por que essa divisão foi deliberada.** Em um Diagrama de Pacotes, o conteúdo relevante é a **decisão de acoplamento**: o que depende de quê, e em que sentido. Aceitar um layout gerado automaticamente significaria aceitar decisões arquiteturais sem tê-las avaliado uma a uma. Manter o desenho sob controle manual foi o que permitiu verificar a ausência de ciclos entre pacotes e sustentar cada dependência com uma justificativa própria.
+
+---
+
+#### Parte 2: Diagrama de Atividades V3 (Modelagem Dinâmica)
+
+Na evolução da V2 para a V3 do Diagrama de Atividades a delegação foi mais profunda: o agente recebeu acesso de leitura e escrita ao repositório local e produziu ele mesmo o arquivo-fonte do diagrama.
+
+##### Metodologia e Iterações
+
+Esta parte do experimento seguiu cinco etapas:
+
+1. **Diagnóstico da V2 pela IA:** forneci a imagem da V2 e o relatório da página de Modelagem Dinâmica. O modelo identificou por conta própria a nota `Fluxo de Agendamentos a ser completado` como pendência de modelagem e apontou a ausência total de *Forks*/*Joins*, apesar de a fundamentação teórica da própria página citá-los como recurso distintivo do Diagrama de Atividades.
+2. **Delimitação humana de escopo:** das melhorias propostas pela IA, selecionei apenas duas — completar o fluxo de Agendamentos e introduzir *Forks*/*Joins*. Recusei deliberadamente as correções de sintaxe UML e a criação de uma terceira raia, para manter a rastreabilidade em relação à V2.
+3. **Geração do artefato-fonte:** o modelo produziu o arquivo `.drawio` com 58 nós e 72 fluxos de controle, distribuídos nas raias `USUÁRIO` e `SISTEMA`.
+4. **Construção de instrumentos de verificação:** a máquina de trabalho não possuía Python, Java nem o draw.io desktop instalados, de modo que não havia como renderizar o arquivo para conferência visual. Diante disso, a IA escreveu dois utilitários em Node.js: um **renderizador** que interpreta o XML mxGraph e aproxima o roteamento ortogonal das arestas, exportando SVG; e um **validador** que recalcula o trajeto de cada aresta e reporta qualquer segmento que intersecte a caixa de um nó, além de verificar sobreposições, contenção nas raias e nós órfãos.
+5. **Ciclo de correção:** a primeira versão gerada passava na checagem de sobreposição, mas a inspeção visual do render revelou **defeitos reais de layout** — as arestas dos ramos "Ver detalhes" e "Cancelar agendamento" cruzavam por cima do bloco `Exibir detalhes do agendamento`. A região de Agendamentos foi reposicionada e a validação passou a retornar ausência de conflitos.
+
+##### Análise Crítica e Intervenção Humana
+
+A abordagem confirmou parcialmente a hipótese, mas expôs uma limitação de fundo que considero o achado mais relevante do experimento.
+
+**O que funcionou.** Gerar o diagrama como código permitiu transformar "está bonito?" em uma pergunta objetiva e automatizada. O validador apontou conflitos de layout que eu não teria percebido manualmente em um diagrama com 72 arestas, e o resultado final é um artefato versionável — passível de `diff` e revisão em *pull request*, ao contrário de uma imagem exportada.
+
+**O que não funcionou.** A IA **não consegue enxergar o próprio resultado** nativamente: ela precisou construir um renderizador para inspecionar o que havia produzido. Esse renderizador apenas *aproxima* o algoritmo de roteamento do draw.io, portanto a verificação recaiu sobre uma aproximação do artefato, e não sobre o artefato real. A conferência definitiva continuou dependendo de eu abrir o arquivo no draw.io e reexportar a imagem manualmente.
+
+**Intervenções humanas que foram indispensáveis:**
+
+* **Controle de escopo.** A IA introduziu por iniciativa própria condições de guarda entre colchetes (`[Sim]`, `[Não]`), correção que eu havia **explicitamente recusado** ao delimitar o escopo. Foi necessário revertê-la para preservar a nomenclatura da V2. Isso evidencia que a disciplina de escopo permanece responsabilidade humana, mesmo quando a sugestão do modelo é tecnicamente correta.
+* **Decisão de modelagem.** A escolha de quais melhorias incorporar — e de quais deixar para uma V4 — partiu da avaliação do histórico da subequipe, não do modelo.
+* **Exportação final.** O PNG publicado nesta entrega foi reexportado por mim no draw.io, já que o render gerado pela IA tinha acabamento tipográfico distinto do padrão visual adotado pelo grupo nas versões anteriores.
+
+**Falha de processo registrada para transparência.** O arquivo-fonte `.drawio` não foi incluído no commit da V3, e apenas o PNG foi versionado. Sem o fonte, uma futura V4 precisaria redesenhar o diagrama desde o início — o que anula justamente a principal vantagem da abordagem testada. O episódio reforça que gerar o artefato em formato versionável só entrega valor se a disciplina de versionamento acompanhar a decisão técnica.
 
 ---
 
@@ -138,6 +190,8 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 * **Legibilidade e Layout:** Layouts gerados automaticamente (ex: PlantUML) apresentam limitações de legibilidade e acabamento visual, exigindo redesign manual no Figma.
 * **Aderência à Técnica UML:** A verificação de regras como fluxo *top-down* e uso de estereótipos (`«use»`, `«camada»`) é acelerada com IAG, mas requer conferência com a bibliografia da disciplina.
 * **Influência do Prompting:** Prompts iterativos acompanhados de capturas de tela e trechos da norma resultam em correções sintáticas significativamente mais precisas.
+* **Formato de Saída como Decisão de Engenharia:** Solicitar à IAG o **arquivo-fonte** do diagrama (ex: `.drawio`, PlantUML) em vez de uma imagem permite verificação automatizada por script, `diff` e revisão em *pull request*. O ganho só se concretiza, porém, se o arquivo-fonte for efetivamente versionado junto ao artefato exportado.
+* **Limites da Autoavaliação:** Os modelos não inspecionam nativamente o resultado visual que produzem. Toda validação de legibilidade e acabamento recaiu sobre renderização intermediária ou conferência humana direta na ferramenta de diagramação.
 
 ---
 
@@ -166,10 +220,11 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 ### Victor Leandro
 * **GitHub:** [@Afrontoso](https://github.com/Afrontoso)
 
-* **Uso da IA Generativa (Senso Crítico):** [Preenchimento do Victor...]
+* **Uso da IA Generativa (Senso Crítico):** Utilizei o Claude Code nas duas frentes que conduzi, mas em profundidades deliberadamente diferentes. Na **V1 do Diagrama de Pacotes**, deixei a IA apenas na tradução conceitual — converter o BPMN, que descreve o sistema como fluxo, em uma proposta de estrutura em camadas — e desenhei o diagrama eu mesmo a partir dela. Fiz essa escolha porque, num Diagrama de Pacotes, o que está em jogo é a decisão de acoplamento: aceitar um layout automático seria aceitar decisões arquiteturais sem avaliá-las uma a uma. Na **V3 do Diagrama de Atividades**, deleguei mais: a IA gerou o próprio arquivo-fonte do draw.io (XML mxGraph), tratando o diagrama como código em vez de imagem. O ganho real aí não foi velocidade de desenho, e sim **verificação automatizada** — pedi um validador que percorre as 72 arestas e acusa qualquer uma que atravesse um bloco, além de checar sobreposições e nós desconectados, e ele encontrou defeitos que eu não teria notado a olho nu. Em contrapartida, a ferramenta expôs um limite claro: não enxerga o próprio resultado e precisou construir um renderizador para se inspecionar, de modo que a conferência recaiu sobre uma aproximação do artefato, não sobre ele. A palavra final continuou sendo minha, abrindo o arquivo no draw.io.
 
 * **Lições Aprendidas:**
-  
+  A lição central foi perceber que **o quanto delegar depende da natureza do artefato**, e não da capacidade do modelo. No diagrama estático, o conteúdo de valor é a decisão de dependência entre módulos, e terceirizar o desenho significaria terceirizar a arquitetura — então a IA ficou no raciocínio e eu no traçado. No diagrama dinâmico, o conteúdo de valor é a completude do fluxo, e o layout é consequência mecânica disso, o que tornou seguro delegar o desenho inteiro. Aprendi também que escolher o **formato de saída** é uma decisão de engenharia mais importante que escolher o prompt: pedir uma imagem produz algo que só pode ser avaliado por inspeção humana, enquanto pedir o arquivo-fonte produz algo testável por script, revisável em *pull request* e evoluível numa próxima versão. Por fim, duas lições vindas de erro próprio — a IA aplicou correções de sintaxe UML que eu havia explicitamente recusado, e foi preciso revertê-las, o que mostra que decidir *o que não fazer* segue sendo função humana; e o arquivo-fonte não entrou no commit inicial da V3, de modo que versionar só o PNG jogaria fora exatamente a vantagem que eu havia buscado.
+
 
 ---
 
@@ -188,3 +243,4 @@ A utilização da Inteligência Artificial Generativa ao longo da Entrega 2 perm
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositório | 10/09/2026 | [cbc2910](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/cbc291011901135eddbe798db4fd4650e2530000) |
 | [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Modificações na estrutura do template e adição do experimento de IA Generativa | 17/09/2026 | [7873814](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7873814) |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Licoes Aprendidas | 10/09/2026 | [37c82b9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
+| [Victor Leandro](https://github.com/Afrontoso) | Adição do Experimento 03 (Diagrama de Pacotes V1 e Diagrama de Atividades V3), ponto de vista individual e ferramenta empregada | 17/09/2026 | [46113ed](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/46113ed) |
