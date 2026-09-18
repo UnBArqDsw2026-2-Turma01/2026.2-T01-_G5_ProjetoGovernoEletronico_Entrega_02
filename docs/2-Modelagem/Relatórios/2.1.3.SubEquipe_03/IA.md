@@ -18,6 +18,7 @@ A coleta de depoimentos e dados de uso ocorreu de forma **assíncrona e individu
 
 - **Gemini:** Utilizado fazer o esqueleto do texto, encontrar fontes para sanar duvidas sobre a modelagem e montar diagramas basicos
 - **ChatGPT:** Utilizado fazer o esqueleto do texto e encontrar fontes para sanar duvidas sobre a modelagem
+- **Claude:** Utilizado como agente de apoio na redação e estruturação da documentação em Markdown (metodologia, embasamento teórico e tabelas de contribuição), além do levantamento e verificação de commits para o histórico de versionamento
 
 ---
 
@@ -135,4 +136,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO)                                                      | Criação do Repositorio                                                       | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Criação do template da documentação de IA Generativa, experimentos e relatos | 17/09/2026 | [8ddaf26](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/8ddaf262b0619515620ef2f029cc1ae973b3626f) |
-| [Gabriel Mota](https://github.com/Gabro-MO)                                                          | Adição do Uso de inteligencia artificial e como a usei                       | 17/09/2026 | [A por depois]()                                                                                                                                         |
+| [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Correção dos integrantes na seção "Pontos de Vista Individuais" para os membros da SubEquipe 03 (Davi, Gabriel e Yasmim) | 17/09/2026 | [5208090](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/520809013f93bc3c3e12b6b7d5558b7fcbc1e3e3) |
+| [Gabriel Mota](https://github.com/Gabro-MO)                                                          | Adição do Uso de inteligencia artificial e como a usei                       | 17/09/2026 | [09a52b6](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/09a52b61c58fac4cf8ca557491927c61d7f57fbe) |
+| [Artur Galdino](https://github.com/ArturFGaldino)                                                    | Adição do link do commit na tabela de versionamento                         | 17/09/2026 | [fee519c](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/fee519ce1b6c05e63daa8699f2aae3533863df4c) |
