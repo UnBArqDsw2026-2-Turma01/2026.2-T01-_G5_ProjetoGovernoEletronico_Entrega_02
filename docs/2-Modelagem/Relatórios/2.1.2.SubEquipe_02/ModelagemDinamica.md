@@ -116,9 +116,12 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 
 ## Metodologia
 
-Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , caso tenha alguma particularidade, explicar ela
+A Subequipe alinhou-se à metodologia geral estabelecida para o projeto. Para a construção, refinamento e garantia de qualidade dos artefatos de modelagem, adotou-se o seguinte fluxo de trabalho:
 
-"Seguindo a geral e --extra da subequipe--..."
+1. **Alinhamento Geral da Equipe:** Realização de reunião com todo o grupo para discutir a distribuição dos artefatos. Ficou sob responsabilidade do nosso subgrupo a elaboração da Modelagem Dinâmica (**Diagrama de Atividades**) e da Modelagem Estática (**Diagrama de Pacotes**).
+2. **Planejamento e Alinhamento Interno:** Encontro focado do subgrupo para delimitar o escopo, alinhar conceitos arquiteturais e estruturar a divisão das entregas em iterativas de versionamento.
+3. **Elaboração Individual e Evolutiva:** Cada integrante desenvolveu suas próprias versões dos diagramas (V1, V2, etc.), garantindo que todos exercitassem ambas as notações (estática e dinâmica). Essa prática promoveu a divergência positiva de ideias e o refinamento contínuo do artefato final.
+4. **Revisão por Pares e Validação via Pull Requests (PRs):** Para a inclusão de qualquer alteração ou novo versionamento, o integrante responsável abria um *Pull Request* no repositório. A fusão (*merge*) dependia da revisão e validação assíncrona dos demais membros, estabelecendo uma camada adicional de controle de qualidade e consistência técnica.
 
 ---
 
@@ -134,5 +137,6 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 do documento | 16/09/2026 | [49119c4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/49119c4aa83aea0ca96363dbf53056a7dfb382e0) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionar Figma | 16/09/2026 | [c49c2e7](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c49c2e7f338713f2ccf0bebdef2fc262a4eea01d) | 
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 2 do diagrama de atividades | 16/09/2026 | [6cf9cf0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf9cf0) |
-| [Victor Leandro](https://github.com/Afrontoso) | Versão 3 do diagrama de atividades: fluxo de Agendamentos completo e inclusão de Forks/Joins | 17/09/2026 | [d9ec46d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/d9ec46d) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 2 do diagrama de atividades | 16/09/2026 | [6cf9cf0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf9cf0ae92b83a9b56113a1c4d218094bd8c2da) |
+| [Victor Leandro](https://github.com/Afrontoso) | Versão 3 do diagrama de atividades: fluxo de Agendamentos completo e inclusão de Forks/Joins | 17/09/2026 | [d9ec46d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/d9ec46d42f9148f46df6aacdd9baf00504491a3d) |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Atualizar Commits e Imagens | 17/09/2026 | [3a6415f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3a6415f535b9141b651bd6ff5c6e17d46f2bb892) |
