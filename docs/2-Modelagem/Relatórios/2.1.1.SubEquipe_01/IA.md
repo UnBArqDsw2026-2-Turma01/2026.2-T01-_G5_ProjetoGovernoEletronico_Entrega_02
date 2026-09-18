@@ -140,11 +140,19 @@ Submeter a **Versão 1.3 Final do Diagrama de Colaboração** (de autoria de [Ar
 
 #### Prompt e Resultado Obtido: 
 
+<div align="center">
+
 ![Prompt](../assets/subequipe01-modelos/modelagem-dinamica/prompt-exp4.png)
+
+</div>
 
 <center><strong>Legenda:</strong> Prompt fornecido ao Google Gemini</center>
 
+<div align="center">
+
 ![Resultado](../assets/subequipe01-modelos/modelagem-dinamica/resultado-exp4.png)
+
+</div>
 
 <center><strong>Legenda:</strong> Resultado fornecido pelo Google Gemini</center>
 
@@ -184,10 +192,10 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 ### Artur Galdino
 * **GitHub:** [@ArturFGaldino](https://github.com/ArturFGaldino)
 
-* **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+* **Uso da IA Generativa (Senso Crítico):** Utilizei ferramentas de IA Generativa como um suporte estratégico nas etapas de concepção e validação dos artefatos da Entrega 2, atuando tanto em experimentos de geração de rascunhos estruturais quanto na auditoria das versões finais (como na condução do Experimento 02 de modelagem estática). A IA mostrou-se excelente para acelerar a organização de pacotes e apontar pontos de atenção em acoplamentos. No entanto, adotei uma postura estritamente crítica: verifiquei que sugestões automáticas muitas vezes exigem filtragem rigorosa para evitar desalinhamentos com as especificidades do ecossistema do Meu SUS Digital e com o rigor formal da UML 2.0.
 
 * **Lições Aprendidas:**
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+  A principal lição aprendida foi que a IA Generativa deve ser tratada como um co-piloto e revisor de código/arquitetura (peer reviewer), e nunca como a tomadora de decisões de design. Embora ela agilize a formatação e a estruturação de ideias complexas, a responsabilidade final pela consistência semântica, pela direção correta das dependências arquiteturais e pelo rigor técnico da modelagem permanece inteiramente da engenharia humana.
 
 ---
 
@@ -198,6 +206,7 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 * **Lições Aprendidas:**
   A principal lição é que a IA não faz o trabalho de modelagem sozinha, ela só dá um empurrão. Percebi que o melhor jeito é ir fazendo aos poucos, tipo gerar uma parte do modelo, validar com o pessoal da equipe, melhorar o prompt e depois acertar os detalhes na mão nas ferramentas. Isso salva tempo e evita que a gente aceite coisas erradas ou alucinações. O resultado final depende muito de como a gente escreve o prompt no começo.
+
 ---
 
 ### João Leles
@@ -213,10 +222,10 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 * **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
 
 * **Uso da IA Generativa (Senso Crítico):**
-  Utilizei a IA Generativa em dois momentos principais: nas etapas de *brainstorming* e estruturação inicial dos artefatos e, posteriormente, na condução de auditorias e validações das versões finais dos diagramas de modelagem estática e dinâmica (como realizado no Experimento 04)[cite: 9, 10]. A ferramenta atuou como um apoio para testes de hipóteses e verificação de consistência, mas exigi rigor no questionamento de suas respostas[cite: 10]. No Experimento 04, por exemplo, a IA apontou uma suposta inconsistência no disparo do PKCE, mas identifiquei que se tratava de uma limitação de interpretação visual do modelo de linguagem sobre o enlace, reafirmando que o julgamento técnico final deve ser estritamente humano[cite: 10].
+  Utilizei a IA Generativa em dois momentos principais: nas etapas de *brainstorming* e estruturação inicial dos artefatos e, posteriormente, na condução de auditorias e validações das versões finais dos diagramas de modelagem estática e dinâmica (como realizado no Experimento 04). A ferramenta atuou como um apoio para testes de hipóteses e verificação de consistência, mas exigi rigor no questionamento de suas respostas. No Experimento 04, por exemplo, a IA apontou uma suposta inconsistência no disparo do PKCE, mas identifiquei que se tratava de uma limitação de interpretação visual do modelo de linguagem sobre o enlace, reafirmando que o julgamento técnico final deve ser estritamente humano.
 
 * **Lições Aprendidas:**
-  A principal lição foi compreender na prática os limites claros da IA Generativa em engenharia de software[cite: 10]. Ela é excelente para acelerar discussões iniciais, organizar ideias e apontar potenciais pontos cegos de documentação, mas não possui a capacidade de compreender o contexto real de negócio e as sutilezas visuais da notação UML 2.0 sem supervisão[cite: 10]. Validar rigorosamente cada retorno e confrontar as sugestões da ferramenta com a bibliografia oficial da disciplina são etapas indispensáveis para garantir a qualidade do projeto[cite: 10].
+  A principal lição foi compreender na prática os limites claros da IA Generativa em engenharia de software. Ela é excelente para acelerar discussões iniciais, organizar ideias e apontar potenciais pontos cegos de documentação, mas não possui a capacidade de compreender o contexto real de negócio e as sutilezas visuais da notação UML 2.0 sem supervisão. Validar rigorosamente cada retorno e confrontar as sugestões da ferramenta com a bibliografia oficial da disciplina são etapas indispensáveis para garantir a qualidade do projeto.
 
 ---
 
