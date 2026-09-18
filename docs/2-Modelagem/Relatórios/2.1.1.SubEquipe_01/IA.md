@@ -100,13 +100,29 @@ A IA gerou um diagrama distribuindo as instâncias de maneira radial, em que o a
 #### Objetivo: 
 Submeter a **Versão 1.3 Final do Diagrama de Colaboração** (de autoria de [Artur Galdino](https://github.com/ArturFGaldino)) à IA Generativa para validar a consistência da sequência de mensagens, o uso de seletores de coleção (`[índice]`), laços de repetição (`*`) e expressões de guarda em cenários de exceção.
 
-#### Resultado Obtido e Prompt: 
-*[INSERIR PRINT DO PROMPT DE VALIDAÇÃO E DA RESPOSTA DA IA]*
+#### Prompt e Resultado Obtido: 
 
-<center><strong>Legenda:</strong> Validação da Versão 1.3 Final do Diagrama de Colaboração realizada pela IA Generativa</center>
+![Prompt](../assets/subequipe01-modelos/modelagem-dinamica/prompt-exp4.png)
 
-#### Análise Crítica e Intervenção Humana: 
-1. **Ponto:** Lorem ipsum
+<center><strong>Legenda:</strong> Prompt fornecido ao Google Gemini</center>
+
+![Resultado](../assets/subequipe01-modelos/modelagem-dinamica/resultado-exp4.png)
+
+<center><strong>Legenda:</strong> Resultado fornecido pelo Google Gemini</center>
+
+#### Análise Crítica e Intervenção Humana:
+
+A submissão do Diagrama de Colaboração para auditoria pela IA Generativa permitiu avaliar a precisão do modelo final quanto ao rigor da notação UML 2.0 e às boas práticas de arquitetura de software:
+
+1. **Validação da Coerência Geral e Conformidade com a Notação:** A IA confirmou que o diagrama está conceitualmente correto e atende aos princípios de modelagem dinâmica para a jornada de autenticação, consentimento (LGPD) e integração com dados de saúde (HL7 FHIR / RNDS), reconhecendo a aplicação adequada dos conceitos de diagramas de comunicação.
+
+2. **Percepção sobre a Responsabilidade do PKCE (`1.1` e `1.2`):** A IA apontou um ponto de atenção alegando que o ator `c:Cidadao` aparecia disparando a geração do desafio PKCE (`gerarDesafioPKCE()`). A equipe analisou o apontamento e constatou uma interpretação limitada da IA sobre o enlace visual: a chamada é disparada quando o cidadão clica no botão de login na interface, mas a execução técnica é tratada pelo cliente móvel (`app:AppMeuSUS`). A observação foi útil para reforçar a clareza visual no alinhamento do rótulo da mensagem sobre o enlace.
+
+3. **Análise da Ordem do Fluxo de Consentimento (`2.4`):** A IA sugeriu revisar a conexão do método `verificarConsentimento(cpf)` partindo do `consent:ConsentManager`. A equipe validou que o fluxo orquestrado pelo aplicativo já atua como requisitante síncrono após o retorno do token, mas utilizou a crítica para garantir que o sentido das setas de disparo estivesse perfeitamente inequívoco e sem ambiguidades de interpretação síncrona/assíncrona.
+
+4. **Reconhecimento do Rigor de Segurança e Auditoria (`3.1.1`):** A IA elogiou e validou expressamente o uso do componente dedicado `audit[cpf]:AuditLogger`, destacando que o registro de logs imutáveis com Hash SHA-256 e *timestamp* está em total consonância com as exigências de cibersegurança da LGPD e com os requisitos do NFR Framework mapeados na Entrega 1.
+
+**Conclusão do Experimento:** O teste de validação comprovou que a IA funciona de forma eficiente como um revisor de código/arquitetura (*peer reviewer*), sendo capaz de identificar trechos com potencial ambiguidade de leitura. Contudo, cabe à engenharia humana filtrar as observações, diferenciando limitações de interpretação visual do modelo de linguagem de falhas reais de arquitetura.
 
 
 ---
@@ -158,10 +174,11 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 ### Nicole Jovita
 * **GitHub:** [@nicolejovita](https://github.com/nicolejovita)
 
-* **Uso da IA Generativa (Senso Crítico):** Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+* **Uso da IA Generativa (Senso Crítico):**
+  Utilizei a IA Generativa em dois momentos principais: nas etapas de *brainstorming* e estruturação inicial dos artefatos e, posteriormente, na condução de auditorias e validações das versões finais dos diagramas de modelagem estática e dinâmica (como realizado no Experimento 04)[cite: 9, 10]. A ferramenta atuou como um apoio para testes de hipóteses e verificação de consistência, mas exigi rigor no questionamento de suas respostas[cite: 10]. No Experimento 04, por exemplo, a IA apontou uma suposta inconsistência no disparo do PKCE, mas identifiquei que se tratava de uma limitação de interpretação visual do modelo de linguagem sobre o enlace, reafirmando que o julgamento técnico final deve ser estritamente humano[cite: 10].
 
 * **Lições Aprendidas:**
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+  A principal lição foi compreender na prática os limites claros da IA Generativa em engenharia de software[cite: 10]. Ela é excelente para acelerar discussões iniciais, organizar ideias e apontar potenciais pontos cegos de documentação, mas não possui a capacidade de compreender o contexto real de negócio e as sutilezas visuais da notação UML 2.0 sem supervisão[cite: 10]. Validar rigorosamente cada retorno e confrontar as sugestões da ferramenta com a bibliografia oficial da disciplina são etapas indispensáveis para garantir a qualidade do projeto[cite: 10].
 
 ---
 
@@ -187,3 +204,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit...
 | [Artur Galdino](https://github.com/ArturFGaldino) e [Nicole Jovita](https://github.com/nicolejovita) | Criação do template da documentação de IA Generativa, experimentos e relatos | 17/09/2026 | [8ddaf26](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/8ddaf262b0619515620ef2f029cc1ae973b3626f) |
 | [Giovani Coelho](https://github.com/Gotc2607) | Relato do uso de IA Generativa e lições aprendidas | 17/09/2026 | [54d3bd9](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/54d3bd9db024ebb55333559599d4d9c8306e13ce) |
 | [João Leles](https://github.com/joaoleless) | Relato de uso de IA Generativa | 17/09/2026 | [c4547eb](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c4547eb16406dc3d11a1b329f62436a3a73ef251) |
+| [Nicole Jovita](https://github.com/nicolejovita) | Adição do Experimento 04 (Validação da Modelagem Dinâmica), relato pessoal e lições aprendidas | 18/09/2026 | |
