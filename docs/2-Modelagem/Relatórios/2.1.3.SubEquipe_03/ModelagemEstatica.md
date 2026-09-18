@@ -106,7 +106,7 @@ Cada classe segue a estrutura de 3 compartimentos (Nome / Atributos / Operaçõe
 
 ### Versão 3
 
-![Imagem Versao 3](../assets/diagrama-de-classes-v3.drawio.png)
+![Imagem Versao 3](../assets/subequipe03-modelagem/Estatica/diagrama-de-classes-v3.drawio.png)
 
 <center><strong>Legenda:</strong> Diagrama de Classes (Versão 3) do domínio "Meu SUS Digital", elaborado por Yasmim de Souza Santos.</center>
 
@@ -262,3 +262,4 @@ Além da rotação de autoria, há uma revisão contínua entre os membros: a ca
 | [Yasmim de Souza Santos](https://github.com/eii-yahs)        | Elaboração da Versão 3 (fechamento) do Diagrama de Classes, com o detalhamento das alterações em relação à V2                                            | 17/09/2026 | [f0228fb](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/f0228fbf1d396bb7714c00d13a90a4bc19fb2e10)         |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs)        | Consolidação da Versão Final do diagrama e inclusão do tópico "Leitura do diagrama"                                                                       | 17/09/2026 | [6ea2291](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6ea22916965532232b483b5b312ee0c2e7f6416a)         |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs)        | Adição da Fundamentação Teórica (diagrama estático, diagrama de classes e simbologias) e das referências bibliográficas                                  | 17/09/2026 | [f0f1ffc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/f0f1ffc6d4897cd649e8966c7e438d168dae3db0)         |
+| [Gabriel Mota](https://github.com/Gabro-MO)                  | Correção do caminho da imagem V3  | 18/09/2026 | [1fab78c](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/1fab78c354aa552df151f7cb3ee43356a0edfd10)         |

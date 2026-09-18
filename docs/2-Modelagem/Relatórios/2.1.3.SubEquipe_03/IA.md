@@ -97,9 +97,10 @@ Utilizar a IA para consolidar o entendimento teórico sobre o Diagrama de Colabo
 
 <center><strong>Legenda:</strong> Prompt "Me explique detalhadamente sobre Diagramas de Colaboração, suas simbologias e como é lido e feito este diagrama", enviado ao Claude com um diagrama de exemplo modelado no Umbrello e os PDFs de referência da disciplina (apostila de UML, módulo 3 de Ricardo Barcelar e os slides de Modelagem UML Dinâmica da Profa. Milene Serrano).</center>
 
-#### **Análise Crítica e Intervenção Humana:**
+#### Análise Crítica e Intervenção Humana:
 
 A IA destacou um ponto relevante para a validação do Diagrama de Colaboração V1 da subequipe: sem a numeração de sequência (`1:`, `2:`, `2.1:`) nas mensagens, o diagrama vira um "diagrama de objetos com setas", ambíguo quanto à ordem de execução. Esse alerta foi usado para conferir se o Diagrama de Colaboração V1 (elaborado por Gabriel Mota) já contemplava a numeração corretamente antes da consolidação da versão final, evitando que a ambiguidade passasse despercebida na revisão entre os membros da subequipe.
+
 ---
 
 ## 4. Análise Crítica e Lições Aprendidas
@@ -175,3 +176,4 @@ Essa forma de uso está alinhada à metodologia de trabalho da subequipe (rotaç
 | [Artur Galdino](https://github.com/ArturFGaldino)                                                    | Adição do link do commit na tabela de versionamento                         | 17/09/2026 | [fee519c](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/fee519ce1b6c05e63daa8699f2aae3533863df4c) |
 | [Davi Ursulino de Oliveira](https://github.com/DaviUrsulino) | Experimento de IA (Claude) no Diagrama de Classes, análise crítica e depoimento individual | 17/09/2026 | [7f9c84b](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/09a52b61c58fac4cf8ca557491927c61d7f57fbe) |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs)                                                | Adição dos prints e da descrição dos Experimentos 01 e 02 (revisão do Diagrama de Classes e leitura do Diagrama de Colaboração com o Claude), preenchimento da Análise Crítica, do ponto de vista individual e da Síntese do Aprendizado da Subequipe; remoção do Gemini e ChatGPT da lista geral de ferramentas | 18/09/2026 | [0af4a84](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/0af4a84c0126f88311ef063a73242a7e8e34fd13) |
+| [Gabriel Mota](https://github.com/Gabro-MO)                                                          | Correção da hierarquia de titulos                    | 18/09/2026 | [3fb0069](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3fb00694b4b7a6fd3002597225621befe695355e) |

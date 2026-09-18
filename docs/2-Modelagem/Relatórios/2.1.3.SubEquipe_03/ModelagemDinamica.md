@@ -102,27 +102,9 @@ Nesta primeira versão do artefato dinâmico, fez-se o mapeamento inicial das in
 | **`:TelaContInfo`**    | Frontend                     | Pagina responsável por mostrar todas as informações do conteudo selecionado                                             |
 | **`:ShareService`**    | Controller / Serviço Externo | Controlador responsável por mostrar as opções de compartilhamento para o conteudo selecionado                           |
 
-### Versão 2
-
-![Imagem Versao 2](../caminho/para/imagem.png)
-
-<center><strong>Legenda:</strong> Legenda para imagem</center>
-
-Oque voce modificou e porque modificou
-
-### Versão 3
-
-![Imagem Versao 3](../caminho/para/imagem.png)
-
-<center><strong>Legenda:</strong> Legenda para imagem</center>
-
-Oque voce modificou e porque modificou
-
----
-
 ## Metodologia
 
-A **Versão 1** do Diagrama de Colaboração foi elaborada por [Gabriel Mota](https://github.com/Gabro-MO), cobrindo os fluxos de "Rede de Saúde" e "Conteúdo". As versões seguintes são construídas em cima dessa elaboração inicial, refinando os fluxos já mapeados.
+A **Versão 1** do Diagrama de Colaboração foi elaborada por [Gabriel Mota](https://github.com/Gabro-MO), cobrindo os fluxos de "Rede de Saúde" e "Conteúdo". 
 
 Assim como na Modelagem Estática, a validação de cada versão é feita pelos demais integrantes do subgrupo, que revisam a entrega em busca de coerência com os artefatos anteriores (Rich Picture, BPMN e o próprio Diagrama de Classes) e garantem um entendimento compartilhado do comportamento modelado.
 
@@ -144,3 +126,4 @@ Assim como na Modelagem Estática, a validação de cada versão é feita pelos 
 | [Gustavo Fornaciari](https://github.com/GUGOFO)       | Criação do Repositorio                                                                                                          | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Gabriel Mota](https://github.com/Gabro-MO)           | Adição da Versão 1 do Diagrama de Colaboração (fluxos "Rede de Saúde" e "Conteúdo") e do embasamento teórico inicial            | 16/09/2026 | [efb53b8](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efb53b8ab446160420be28ffaab127cf49900b14) |
 | [Yasmim de Souza Santos](https://github.com/eii-yahs) | Detalhamento da metodologia de trabalho da subequipe (rotação de versões e revisão contínua entre os membros)                   | 17/09/2026 | [37e0f46](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/37e0f46438bba1ecf427a8d69b12afda091c7fca) |
+| [Gabriel Mota](https://github.com/Gabro-MO)           | Remoção do conteudo não usado do template            | 18/09/2026 | [4da4bba](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/4da4bba21ccc320ff367ce888753378db537c5ae) |
