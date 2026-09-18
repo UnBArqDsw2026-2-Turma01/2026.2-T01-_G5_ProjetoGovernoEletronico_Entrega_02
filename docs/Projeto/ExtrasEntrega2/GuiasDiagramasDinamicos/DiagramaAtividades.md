@@ -80,5 +80,5 @@ O Visual Paradigm Online permite criar diagramas UML diretamente pelo navegador 
 
 | Nome do Membro                                   | Contribuição                                               | Data       | Commit |
 | ------------------------------------------------ | ---------------------------------------------------------- | ---------- | ------ |
-| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 |        |
-| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Criação do guia do Diagrama de Atividades | 15/09/2026 |        |
+| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | [3227304](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3227304c3509461ab58ddf498320e2a16272fe7d) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Criação do guia do Diagrama de Atividades | 15/09/2026 | [b6d55ad](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b6d55ad7180104e40754a923c857f7e02c86260f) |

@@ -82,11 +82,24 @@ As dependências entre os pacotes foram estabelecidas por meio de setas pontilha
 ### Versão 1.2
 
 **Autoria:** [João Leles](https://github.com/joaoleless)
-![Imagem Versao 3](../caminho/para/imagem.png)
+![Imagem Versao 3](../assets/subequipe01-modelos/modelagem-estatica/modelagem-estatica-v1.2.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+**Legenda:** Correção de inconsistências estruturais e introdução da camada de Notificações
 
-O que voce modificou e por que modificou
+**O Que Foi Modificado na Estrutura**
+
+- **Correção do fluxo de dependência em `Presentation`:** as setas entre `Screens`, `StateManagement` e `NavigationController` eram bidirecionais na Versão 1.1, o que violava o próprio princípio declarado naquela versão ("telas puramente visuais"). Agora o fluxo é estritamente unidirecional: `Screens` **use** `StateManagement` **use** `NavigationController` — as telas disparam casos de uso, o gerenciador de estado decide, e só ele aciona a navegação.
+- **Correção de um subpacote duplicado/mal nomeado:** o pacote `DataPersistence` continha um subpacote chamado `Vaccination`, duplicando o nome de um subpacote já existente em `HealthServices` — um resíduo de cópia/colagem sem sentido semântico na camada de persistência. Foi renomeado para `SyncManager`, responsável por enfileirar e sincronizar dados offline (agendamentos, vacinas, prontuários) quando a conexão é restabelecida.
+- **Criação do pacote `Notification`:** a Versão 1.1 registrou conscientemente a exclusão de um serviço de notificações "nesta iteração". Esta versão introduz esse pacote, contendo `PushService` (disparo de notificações push) e `ReminderScheduler` (agendamento de lembretes de consultas e doses de vacina).
+- **Atualização do Fluxo de Dependências:** `HealthServices` passa a orquestrar também o `Notification` (para lembretes de agenda/vacinação), e `Notification` depende de `SecurityAndCompliance` para validar consentimento (LGPD) antes de enviar qualquer notificação e para registrar o envio em log de auditoria.
+
+**Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)**
+
+- **Integridade da Regra de Dependência Unidirecional:** setas bidirecionais entre `Screens` e `StateManagement` criam acoplamento circular, dificultando testes isolados e contrariando a própria motivação de isolar responsabilidades definida na Versão 1.1. Corrigir isso torna o pacote `Presentation` de fato testável em camadas.
+- **Eliminação de Ambiguidade Semântica:** um subpacote chamado `Vaccination` dentro de `DataPersistence` confundiria qualquer leitor do diagrama sobre seu papel — parece uma entidade de domínio, não uma responsabilidade de infraestrutura. Renomear para `SyncManager` deixa clara a responsabilidade técnica (sincronização offline-first).
+- **Fechamento de uma Lacuna Já Identificada:** como o próprio artefato da Versão 1.1 já apontava a ausência do serviço de notificações como uma lacuna consciente, esta versão evolui o diagrama para cobrir esse cenário, essencial em um app de saúde pública (lembretes de vacinação e consultas aumentam a adesão do cidadão).
+- **Conformidade LGPD End-to-End:** ao fazer `Notification` depender de `SecurityAndCompliance`, garantimos que nenhuma notificação seja disparada sem consentimento explícito registrado e sem gerar log auditável — estendendo a mesma disciplina de conformidade já aplicada a `Authentication` e `HealthIntegration`.
+- **Centralização do Papel de `SecurityAndCompliance`:** o pacote de segurança passa a ser consumido por três módulos distintos (`Authentication`, `HealthIntegration` e `Notification`), reforçando visualmente seu papel de camada transversal de conformidade e segurança, e não apenas um apêndice do fluxo de login.
 
 ### Versão 1.3
 
@@ -121,3 +134,4 @@ INSERIR METODOLOGIA.
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Artur Galdino](https://github.com/ArturFGaldino) | Estruturação inicial do artefato de modelagem estática de pacotes e definição dos módulos | 15/09/2026 | [74546bc](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/74546bc3f8c51bdd738df156dbc65de0edcfceac) |
 | [Giovani Coelho](https://github.com/Gotc2607) | Elaboração da Versão 1.1 da modelagem estática de pacotes (adição de Domínio e Persistência) | 16/09/2026 | [6cf3912](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf3912) |
+| [João Leles](https://github.com/joaoleless) | Elaboração da Versão 1.2 da modelagem estática de pacotes | 16/09/2026 | [50b64b6](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/50b64b600b5cba1e34f46c0d18ec2d21c6a4a204) |

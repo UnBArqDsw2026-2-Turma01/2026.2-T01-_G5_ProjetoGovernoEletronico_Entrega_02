@@ -62,5 +62,5 @@ Ferramenta gráfica recomendada para rascunhos, diagramação colaborativa rápi
 
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
-| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | |
-| [Nicole Jovita](https://github.com/nicolejovita) | Criação do Guia do Diagrama de Sequência | 14/09/2026 | |
+| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | [3227304](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3227304c3509461ab58ddf498320e2a16272fe7d) |
+| [Nicole Jovita](https://github.com/nicolejovita) | Criação do Guia do Diagrama de Sequência | 14/09/2026 | [b14a35d](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b14a35dbfe86765ff14386dd25950939320be2f6) |
