@@ -144,6 +144,6 @@ Ferramentas dedicadas à modelagem UML. Diferentemente de ferramentas de desenho
 
 | Nome do Membro | Contribuição | Data | Commit |
 | -- | -- | -- | -- |
-| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | |
+| [Nicole Jovita](https://github.com/nicolejovita) | Criação do template padronizado para os guias de diagramas | 14/09/2026 | [3227304](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/3227304c3509461ab58ddf498320e2a16272fe7d) |
 | [Victor Leandro](https://github.com/Afrontoso) | Elaboração do Guia do Diagrama de Pacotes (Iniciativa Extra) | 15/09/2026 | |
 | [Victor Leandro](https://github.com/Afrontoso) | Inclusão das sete figuras ilustrando a notação, os critérios de decomposição e o exemplo em camadas | 16/09/2026 | |

@@ -71,11 +71,23 @@ Para garantir uniformidade e legibilidade, a modelagem foi estruturada sob as se
 
 ### Versão 2
 
-![Imagem Versao 2](../caminho/para/imagem.png)
+![Diagrama de Atividades - Versão 2](../assets/subequipe02-modelos/modelagem-dinamica/modelagem-dinamicaV2.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Figura 3 - Diagrama de Atividades refinado e adaptado ao padrão UML </center>
 
-Oque voce modificou e porque modificou
+#### O Que Foi Modificado na Estrutura
+
+* **Adição e Detalhamento Completo do Fluxo de Vacinas:** Incorporação de todo o fluxo funcional do módulo de vacinas, englobando a requisição de registros na API da RNDS, tratamento de estados de conexão (Online/Offline), exibição das abas "Documentos" e "Histórico", seleção do documento e renderização do PDF para download.
+* **Inclusão dos Símbolos de Decisão:** Adição dos losangos de decisão para representar explicitamente as ramificações condicionais (como Sim/Não), que antes não utilizavam os símbolos adequados para nós de decisão.
+* **Correção da Ação na Opção "Sim" da Validação de Sessão:** Ajuste no texto e na ação do ramo Sim após a verificação *"Sessão do usuário está ativa?"*. O texto anterior estava incorreto e foi ajustado para a ação funcional real: `Carregar Dashboard e Menu lateral`.
+* **Padronização de Nomenclatura com Verbos de Ação:** Alteração do bloco estático "Seção Conteúdo" para a ação verbal `Exibir publicação de saúde selecionada`.
+
+#### Por Que Essas Modificações Foram Feitas 
+
+* **Fidelidade ao Domínio de Negócio (Módulo de Vacinas):** O detalhamento da integração com a RNDS e da emissão de comprovantes vacinais garante que o artefato retrate com precisão uma das funcionalidades centrais do Meu SUS Digital.
+* **Sintaxe e Padrão Visual UML** A introdução formal dos losangos de decisão com rótulos de guarda nas arestas (ex: `Sim`, `Não`, `Online`, `Offline`) garante conformidade com a especificação oficial de modelagem comportamental da UML para desvios de fluxo.
+* **Correção de Inconsistência de Texto de Interface:** A alteração do rótulo no ramo Sim elimina erros de texto que comprometiam o entendimento do comportamento do sistema no momento pós-autenticação.
+* **Padronização Semântica de Ações:** Na UML, blocos de ação representam unidades executáveis de comportamento (expressas por verbos no infinitivo) e não rótulos estáticos de menus ou categorias da interface.
 
 ### Versão 3
 
@@ -98,6 +110,7 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 ### Embasamento teórico para criação:
 
 1. UML-DIAGRAMS. *UML Activity Diagrams*. Disponível em: https://www.uml-diagrams.org/activity-diagrams.html. Acesso em: 15/09/2026.
+2. GUEDES, Gilleanes T. A. UML 2 - Uma Abordagem Prática. 3. ed. São Paulo: Novatec Editora, 2018. ISBN 978-85-7522-646-9.
 
 ---
 
@@ -106,3 +119,4 @@ Explicar qual a metodologia seguida pela equipe para fazer essa modelagem e , ca
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Versão 1 do documento | 16/09/2026 | [49119c4](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/49119c4aa83aea0ca96363dbf53056a7dfb382e0) | 
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Adicionar Figma | 16/09/2026 | [c49c2e7](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/c49c2e7f338713f2ccf0bebdef2fc262a4eea01d) | 
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 2 do diagrama de atividades | 16/09/2026 | [6cf9cf0](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/6cf9cf0) |

@@ -66,15 +66,15 @@
 
 - **2. Modelagem**
     - 2.1 Relatório
-        - 2.1.1. SubEquipe_01 
+        - [2.1.1. SubEquipe_01](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/fluxograma.md)
             - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemEstatica.md)
             - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.1.SubEquipe_01/IA.md)
-        - 2.1.2. SubEquipe_02
+        - [2.1.2. SubEquipe_02](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/fluxograma.md)
             - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemEstatica.md)
             - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.2.SubEquipe_02/IA.md)
-        - 2.1.3. SubEquipe_03
+        - [2.1.3. SubEquipe_03](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/fluxograma.md)
             - [Modelagem Estática](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemEstatica.md)
             - [Modelagem Dinâmica](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/ModelagemDinamica.md)
             - [IA Generativa](./2-Modelagem/Relatórios/2.1.3.SubEquipe_03/IA.md)

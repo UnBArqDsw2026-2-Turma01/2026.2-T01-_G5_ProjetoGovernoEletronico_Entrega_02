@@ -6,9 +6,9 @@ A modelagem estática da SubEquipe 02 foi feita com o **Diagrama de Pacotes** da
 
 ## Versão Final
 
-![Diagrama de Pacotes do Meu SUS Digital - versão 1.0](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v1.0.jpg)
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/EMs5IeE2EYVVNnXhxXQ6DB/Sem-t%C3%ADtulo?node-id=0-1&embed-host=share" allowfullscreen></iframe>
 
-<center><strong>Legenda:</strong> Diagrama de Pacotes do Meu SUS Digital (v1.0) organização do sistema em camadas lógicas, pacote transversal e dependências com os sistemas externos gov.br e RNDS.</center>
+<center><strong>Legenda:</strong> Diagrama de Pacotes do Meu SUS Digital.</center>
 
 ---
 
@@ -21,27 +21,21 @@ A modelagem estática da SubEquipe 02 foi feita com o **Diagrama de Pacotes** da
 
 ---
 
-## Fundamentação Teórica
+#### Fundamentação Teórica
 
 O **Diagrama de Pacotes** é um diagrama **estrutural e organizacional** da UML. Segundo o material da disciplina, trata-se de "mais um diagrama estrutural, estático, o qual permite organizar o sistema como se representasse uma visão em módulos" (SERRANO, 2026). Ele não descreve comportamento nem detalha classes: seu papel é **agrupar elementos de modelagem em unidades maiores e mostrar como essas unidades dependem umas das outras**.
 
-Na taxonomia apresentada em aula, a UML é dividida em diagramas estruturais/estáticos, comportamentais/dinâmicos, **organizacionais (ou em pacotes)** e anotacionais. O Diagrama de Pacotes ocupa justamente a fatia organizacional é o diagrama que responde à pergunta *"como o sistema está dividido?"* antes de responder *"como cada parte funciona?"*.
+Na taxonomia apresentada em aula, a UML é dividida em diagramas estruturais/estáticos, comportamentais/dinâmicos, **organizacionais (ou em pacotes)** e anotacionais. O Diagrama de Pacotes ocupa justamente a fatia organizacional; é o diagrama que responde à pergunta *"como o sistema está dividido?"* antes de responder *"como cada parte funciona?"*.
 
-### Elementos da notação utilizados
+##### Elementos da notação utilizados
 
 | Elemento | Representação | Uso neste artefato |
-| :--- | :--- | :--- |
+| ------ | ------ | ------ |
 | **Pacote** | Retângulo com aba, no formato de pasta | Cada camada lógica e cada módulo interno do Meu SUS Digital |
-| **Aninhamento** | Pacote desenhado dentro de outro | Os módulos internos (`Home`, `ConsultaDeRegistros`, …) dentro de suas camadas, e as camadas dentro da fronteira do sistema |
-| **Dependência `«use»`** | Seta tracejada com ponta aberta | Um pacote precisa de outro para cumprir sua função; a ponta aponta para o pacote **fornecedor** |
-| **Estereótipo** | Texto entre guilhemés (`«camada»`, `«sistema externo»`) | Classifica o papel de cada pacote, distinguindo camada interna, pacote transversal e sistema de terceiros |
-| **Nota** | Retângulo com canto dobrado | Legenda da notação e tabela de rastreabilidade com o BPMN |
-
-### Por que este diagrama para esta subequipe
-
-Os três artefatos que a SubEquipe 02 produziu na Entrega 01 são todos **comportamentais ou contextuais**: o Rich Picture mostra atores e preocupações, o SIG mostra requisitos não funcionais e o BPMN mostra o fluxo do processo. Faltava uma visão que respondesse **onde**, na estrutura do software, cada um desses comportamentos vive.
-
-O Diagrama de Pacotes preenche exatamente essa lacuna, e faz isso no nível de abstração compatível com o que a Engenharia Reversa caixa-preta permite afirmar. Como o Meu SUS Digital não tem código-fonte publicado, **não é honesto modelar um Diagrama de Classes** não há como conhecer atributos, operações ou multiplicidades reais. Já os módulos e as dependências entre eles são inferíveis a partir do comportamento observado nas telas e das integrações que o próprio sistema expõe ao usuário. O pacote é, portanto, a menor unidade sobre a qual a subequipe consegue fazer afirmações verificáveis.
+| **Aninhamento** | Pacote desenhado dentro de outro | Os módulos internos dentro de suas camadas, e as camadas dentro da fronteira do sistema |
+| **Dependência «use»** | Seta tracejada com ponta aberta | Um pacote precisa de outro para cumprir sua função; a ponta aponta para o pacote **fornecedor** |
+| **Estereótipo** | Texto entre guilhemés («camada», «sistema externo») | Classifica o papel de cada pacote, distinguindo camada interna, pacote transversal e sistema de terceiros |
+| **Nota** | Retângulo com canto dobrado | Legenda da notação e tabela de rastreabilidade |
 
 ---
 
@@ -59,17 +53,12 @@ O Diagrama de Pacotes preenche exatamente essa lacuna, e faz isso no nível de a
 
 A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilidades observadas em fluxo** para **responsabilidades alocadas em módulos**. O sistema foi organizado em uma **arquitetura em camadas**, com dependências fluindo em sentido único (de cima para baixo), mais um pacote transversal.
 
-**`Apresentação` «camada»** tudo que o cidadão vê e opera. Reúne `Home` (a tela de entrada com a bifurcação por tipo de serviço), `MinhaSaude.UI` e `MiniApps.UI` (os dois grandes ramos que no BPMN viraram subprocessos colapsados) e `Avaliacao.UI` (a tela acionada pela notificação de avaliação pendente).
-
-**`Aplicação` «camada»** a orquestração dos casos de uso, isto é, a tradução de cada fluxo do BPMN em um módulo coordenador. `GestaoDeSessao` cobre o login federado e o reuso da sessão para consultar vários serviços sem refazer a autenticação; `ConsultaDeRegistros` cobre o subprocesso *Minha saúde*; `CatalogoDeMiniApps` cobre o subprocesso *Mini apps*; `AvaliacaoDeAtendimento` cobre o ciclo de notificação, resposta e retorno ao fluxo principal.
-
-**`Domínio` «camada»** os conceitos de negócio que existem independentemente de tela ou de protocolo de integração: `Cidadao`, `RegistroDeSaude` (vacinas, exames e atendimentos) e `Comprovante`.
-
-**`Integração` «camada»** a fronteira técnica com o mundo externo. `AutenticacaoGovBr` isola o protocolo de login federado, `IntegracaoRNDS` isola o consumo dos dados clínicos e `Notificacoes` isola o disparo das mensagens que chegam ao cidadão.
-
-**`Comum` «transversal»** as preocupações que não pertencem a uma única camada: `SegurancaDeSessao` (guarda de token e encerramento de sessão), `PrivacidadeEConsentimento` (o consentimento explícito exigido quando um mini app usa dados pessoais, ponto levantado tanto no SIG quanto no BPMN) e `TratamentoDeFalhas` (a política de resposta a indisponibilidade, que na v2 do BPMN apareceu como evento de borda `RNDS indisponível`).
-
-**Sistemas externos** `gov.br` e `RNDS` foram mantidos **fora da fronteira do sistema** e desenhados com traço tracejado. Essa decisão é a tradução direta de como eles aparecem no BPMN: o gov.br era uma piscina fechada (*black box*), da qual só se conhecem as mensagens trocadas, e a RNDS era um depósito de dados externo. Modelá-los como pacotes internos afirmaria um conhecimento sobre a estrutura deles que a Engenharia Reversa não sustenta.
+* **Apresentação «camada»**: Reúne Home, MinhaSaude.UI, MiniApps.UI e Avaliacao.UI.
+* **Aplicação «camada»**: Orquestração dos casos de uso (GestaoDeSessao, ConsultaDeRegistros, CatalogoDeMiniApps, AvaliacaoDeAtendimento).
+* **Domínio «camada»**: Conceitos de negócio independentes de tela (Cidadao, RegistroDeSaude e Comprovante).
+* **Integração «camada»**: Fronteira técnica com o mundo externo (AutenticacaoGovBr, IntegracaoRNDS e Notificacoes).
+* **Comum «transversal»**: Preocupações transversais (SegurancaDeSessao, PrivacidadeEConsentimento e TratamentoDeFalhas).
+* **Sistemas externos**: gov.br e RNDS mantidos fora da fronteira do sistema com traço tracejado.
 
 #### Decisões de modelagem e justificativas
 
@@ -108,19 +97,64 @@ A modelagem partiu do BPMN produzido pela subequipe e converteu **responsabilida
 
 ### Versão 2
 
-![Imagem Versao 2](../caminho/para/imagem.png)
+![Imagem Versao 2](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v2.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Segunda versão do Diagrama de Pacotes</center>
 
-Oque voce modificou e porque modificou
+**O Que Foi Modificado na Estrutura**
+
+* **Decomposição da Camada de Apresentação (`Apresentação «camada»`)**: Substituição do pacote monolítico `MinhaSaude.UI` por 5 subpacotes funcionais especializados: `Vacinas.UI`, `Medicamentos.UI`, `DignidadeMenstrual.UI`, `Agendamentos.UI` e `MedicosEspecialistas.UI` (preservando `Home`, `MiniApps.UI` e `Avaliacao.UI`).
+
+* **Detalhamento da Camada de Aplicação (`Aplicação «camada»`)**: Substituição do pacote orquestrador genérico `ConsultaDeRegistros` por 4 gerenciadores dedicados de regras de negócio: `GestaoDeVacinas`, `GestaoDeMedicamentos`, `ElegibilidadeDignidadeMenstrual` e `GestaoDeAgendamentos` (mantendo `GestaoDeSessao`, `CatalogoDeMiniApps` e `AvaliacaoDeAtendimento`).
+
+* **Especialização do Domínio (`Domínio «camada»`)**: Refinamento da entidade genérica `RegistroDeSaude` nas entidades de negócio reais do Meu SUS Digital: `CarteiraVacinacao`, `Medicamento`, `AutorizacaoFarmaciaPopular` e `AgendamentoConsulta` (mantendo `Cidadao` e `Comprovante`).
+
+* **Criação do Módulo de Integração com o CadÚnico (`Integração «camada»`)**: Adição do pacote `IntegracaoCadUnico` conectado ao novo sistema externo `CadÚnico / Farmácia Popular «sistema externo»` (via seta tracejada `«use»` e protocolo `REST / API`) para suporte às regras de elegibilidade da Dignidade Menstrual.
+
+* **Padronização das Conexões UML 2.5**: Padronização de todas as dependências entre pacotes no sentido top-down (de cima para baixo) utilizando rigorosamente setas tracejadas com o estereótipo `«use»` e enquadramento no pacote do sistema (`Meu SUS Digital «sistema»`).
+
+**Por Que Essas Modificações Foram Feitas**
+
+* **Isolamento de Responsabilidades e Alta Coesão**: A quebra dos pacotes genéricos em submódulos funcionais aplica o Princípio da Responsabilidade Única (SRP), garantindo que alterações nas regras de negócio de um serviço específico (ex: critérios de elegibilidade do CadÚnico) não afetem outros módulos isolados (ex: Agendamento de Consultas).
+
+* **Rastreabilidade de 1 para 1 com a Modelagem Dinâmica (V2)**: A reestruturação estabelece correspondência direta entre os pacotes estáticos e os fluxos de controle modelados no Diagrama de Atividades V2 do Módulo "Minha Saúde", garantindo consistência completa entre os artefatos da equipe.
+
+* **Atendimento a Requisitos Não Funcionais e Regras Governamentais**: A criação do pacote `IntegracaoCadUnico` supre a necessidade técnica de integrar o app com os serviços de assistência social do governo federal para concessão automatizada da autorização de retirada de absorventes na Farmácia Popular.
+
+* **Aumento da Testabilidade e Manutenibilidade**: O desacoplamento das regras de negócio em gerenciadores e entidades de domínio isoladas viabiliza a escrita de testes unitários e de integração sem dependência da renderização de interfaces gráficas ou de instabilidade de redes externas.
+
+* **Rigor Técnico e Padronização UML 2.5**: O ajuste das dependências e a aplicação dos estereótipos eliminam ambiguidades de interpretação e alinham o diagrama aos padrões formais definidos pela OMG para diagramas organizacionais em camadas.
+
 
 ### Versão 3
 
-![Imagem Versao 3](../caminho/para/imagem.png)
+![Diagrama de Pacotes - Versão 3](../assets/subequipe02-modelos/modelagem-estatica/diagrama-pacotes-v3.png)
 
-<center><strong>Legenda:</strong> Legenda para imagem</center>
+<center><strong>Legenda:</strong> Terceira versão do Diagrama de Pacotes com decomposição completa da plataforma de Mini Apps e integrações externas</center>
 
-Oque voce modificou e porque modificou
+#### O Que Foi Modificado na Estrutura
+
+* **Decomposição e Detalhamento da Camada de Apresentação (`Apresentação «camada»`)**: Substituição e desmembramento do módulo genérico de mini apps em subpacotes de interface especializados: `CatalogoMiniApps.UI`, `Hemovida.UI`, `Transplantes.UI`, `CadernetasSaude.UI` e `SaudeMental.UI`
+
+* **Detalhamento da Camada de Aplicação (`Aplicação «camada»`)**: Expansão do orquestrador genérico de mini apps em gerenciadores dedicados de regras de negócio para cada categoria funcional: `GerenciadorCatalogoMiniApps`, `GestaoHemovida`, `GestaoTransplantes`, `GestaoCadernetas` e `GestaoSaudeMental`.
+
+* **Especialização do Domínio (`Domínio «camada»`)**: Inclusão de novas entidades de negócio essenciais para suportar as operações dos mini apps e do suporte de acolhimento emocional: `DoadorSangue`, `RegistroTransplante`, `CadernetaAcompanhamento` e `RegistroAcolhimento`.
+
+* **Criação dos Módulos de Integração e Sistemas Externos (`Integração «camada»`)**: Adição dos pacotes de integração `IntegracaoSNT` e `IntegracaoHemocentro`, conectados aos novos sistemas externos `SNT «sistema externo»` (Sistema Nacional de Transplantes) e `Rede de Hemocentros «sistema externo»`. Além disso, vinculação do pacote `Notificacoes` ao novo sistema externo `Serviço de Push «sistema externo»` (Provedor de Notificações, via protocolo REST / API).
+
+* **Padronização das Conexões UML e Correções de Dependência**: Correção  de todas as dependências entre pacotes no sentido top-down (de cima para baixo), eliminando o fluxo inverso entre camadas, rotulando todas as conexões com sistemas externos com o estereótipo `«use»` e seu respectivo protocolo técnico.
+
+#### Por Que Essas Modificações Foram Feitas (Justificativas Arquiteturais)
+
+* **Isolamento de Responsabilidades e Arquitetura de Plataforma de Mini Apps (SRP)**: A decomposição do ecossistema de Mini Apps aplica o Princípio da Responsabilidade Única (SRP), permitindo que o aplicativo atue como uma plataforma modular de micro-frontends. Isso garante que a inclusão ou alteração de mini apps específicos ocorra de forma isolada, sem impactar a estabilidade do núcleo do app.
+
+* **Rastreabilidade de 1 para 1 com a Modelagem Dinâmica (BPMN)**: A reestruturação estabelece correspondência direta entre a arquitetura estática e os fluxos de controle modelados no BPMN. A V3 detalha o **subprocesso colapsado "Mini apps"** nas suas unidades de interface, aplicação, domínio e integração, complementando a decomposição do **subprocesso colapsado "Minha Saúde"** realizada na V2.
+
+* **Atendimento a Requisitos não Funcionais e Saúde Pública**: A criação dos pacotes `IntegracaoSNT` e `IntegracaoHemocentro` supre a necessidade técnica de interoperabilidade com o Sistema Nacional de Transplantes e com as redes regionais de bancos de sangue
+
+* **Extensibilidade e Autonomia do Ecossistema**: A modularização em pacotes específicos permite incorporar novas ferramentas de saúde pública (novas cadernetas, guias e serviços regionais) como módulos independentes, garantindo a evolução contínua da plataforma do Ministério da Saúde.
+
+* **Conformidade Notacional UML**: A eliminação da dependência ascendente (*bottom-up*), a conexão do pacote `Notificacoes` a um provedor externo de push e alinha o artefato aos padrões formais da OMG para arquiteturas organizacionais em camadas.
 
 ---
 
@@ -146,6 +180,7 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 1. SERRANO, Milene. *Arquitetura e Desenho de Software — Aula: Modelagem UML Estática*. Brasília: FGA/UnB, 2026. 1 arquivo PDF.
 2. OBJECT MANAGEMENT GROUP (OMG). *Unified Modeling Language (UML), Version 2.5.1*. Needham: OMG, 2017. Disponível em: https://www.omg.org/spec/UML/2.5.1/. Acesso em: 15 set. 2026.
 3. UML DIAGRAMS. *UML Package Diagrams Overview*. Disponível em: https://www.uml-diagrams.org/package-diagrams-overview.html. Acesso em: 15 set. 2026.
+4. GUEDES, Gilleanes T. A. UML 2 - Uma Abordagem Prática. 3. ed. São Paulo: Novatec Editora, 2018. ISBN 978-85-7522-646-9.
 
 ---
 
@@ -155,3 +190,5 @@ A ferramenta escolhida foi o **[Figma](https://www.figma.com/)**, decisão tomad
 | ---- | ------ | ----- | ---- |
 | [Gustavo Fornaciari](https://github.com/GUGOFO) | Criação do Repositorio | 10/09/2026 | [efd139e](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/efd139e36025a5c1610fff909ac41451ab13eecd) |
 | [Victor Leandro](https://github.com/Afrontoso) | Versão 1.0 da Modelagem Estática: Diagrama de Pacotes do Meu SUS Digital, fundamentação teórica, decisões de modelagem, rastreabilidade com o BPMN e metodologia | 15/09/2026 | |
+| [Gustavo Fornaciari](https://github.com/GUGOFO) | Versao 2 | 10/09/2026 | [b32955f](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/b32955f3c409109190f26a957067839975bae311) |
+| [Ana Beatriz Araujo](https://github.com/AnnaBeatrizAraujo) | Versão 3 do diagrama de pacotes e atualização da documentação estática | 17/09/2026 | [7dacf92](https://github.com/UnBArqDsw2026-2-Turma01/2026.2-T01-_G5_ProjetoGovernoEletronico_Entrega_02/commit/7dacf92) |
