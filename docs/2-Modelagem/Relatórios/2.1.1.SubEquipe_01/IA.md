@@ -231,16 +231,19 @@ Abaixo estão consolidados os aspectos avaliados durante a experimentação de I
 
 ## 6. Síntese do Aprendizado da Subequipe
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+A experiência integrada da **SubEquipe 01** com o uso de Inteligência Artificial Generativa na Entrega 2 consolidou uma visão madura e pragmática sobre o papel essas ferramentas na Engenharia de Software. A realização conjunta de experimentos de **geração inicial** e **validação crítica de modelos consolidados** revelou que a IAG atua com excelência como um acelerador de *brainstorming*, organizador de rascunhos de documentação e revisor de pares (*peer reviewer*) sintático. 
+
+Contudo, ficou evidente que as ferramentas generativas possuem limitações severas na precisão da notação gráfica da UML 2.0 (frequentemente misturando estereótipos de componentes, pacotes e sequências) e tendem a omitir fluxos de exceção e resiliência arquitetural. A intervenção humana criteriosa foi indispensável para filtrar falso-positivos, ajustar a direção semântica das dependências e garantir total conformidade com as regras de negócio do *Meu SUS Digital* e com o NFR SIG. Em suma, a IA potencializa a produtividade, mas a tomada de decisão técnica e o rigor formal permanecem sob responsabilidade estrita dos projetistas.
 
 ---
 
 ## 7. Referências e Ferramentas Utilizadas
 
-* **Ferramenta (versão):** Descrição do uso e link para a ferramenta.
-* Colocar link para atas da subequipe caso pertinente (por exemplo, uso de transcricao automatica da gravacao com IA - nesse caso citar anteriormente no uso de IA)
-* Experimentos com IA (link puxando para a secao 3 desse documento caso tenham optado por inserir)
-
+* **Claude 3.5 Sonnet (Anthropic):** Utilizado na geração inicial de rascunhos de diagramas de pacotes, revisão de sintaxe UML e auxílio na formatação de relatórios em Markdown. Disponível em: [https://claude.ai/](https://claude.ai/). Acesso em: 18 set. 2026.
+* **Google Gemini (Advanced / 1.5 Pro):** Empregado na validação crítica dos diagramas finais (V1.3 de Estática e Dinâmica), comparação de requisitos com os artefatos da Entrega 1 e na transcrição/resumo automático da gravação da reunião. Disponível em: [https://gemini.google.com/](https://gemini.google.com/). Acesso em: 18 set. 2026.
+* **ChatGPT (OpenAI - GPT-4o):** Utilizado para suporte na estruturação da documentação no MkDocs e testes rápidos de geração de código no PlantUML. Disponível em: [https://chatgpt.com/](https://chatgpt.com/). Acesso em: 18 set. 2026.
+* **Ata de Reunião da SubEquipe 01 (14/09/2026):** Registro da reunião de alinhamento com transcrição auxiliada por IA Generativa. Disponível em: [Ata de Reunião - 14/09/2026](../../Atas/Entrega2/AtasSub1/Ata-14-09.md).
+* **Experimentos de Modelagem com IA:** Conjunto de testes práticos de geração e auditoria conduzidos pela equipe na [Seção 3 (Experimentos com IA Generativa nas Modelagens)](#3-experimentos-com-ia-generativa-nas-modelagens) deste documento.
 ---
 
 ## Histórico de Versionamento
